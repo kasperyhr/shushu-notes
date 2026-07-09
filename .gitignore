@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temp files
+*.tmp
+*.bak
+
+# Node (future-proofing)
+node_modules/
+
+# Python (future-proofing)
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Build output (future-proofing)
+dist/
+build/
+site/
+.cache/
