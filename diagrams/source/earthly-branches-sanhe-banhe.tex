@@ -1,65 +1,65 @@
-\\documentclass[tikz,border=10pt]{standalone}
-\\usepackage{ctex}
-\\usepackage{xcolor}
-\\pagecolor{white}
-\\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing, backgrounds}
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{ctex}
+\usepackage{xcolor}
+\pagecolor{white}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing, backgrounds}
 
-\\begin{document}
+\begin{document}
 
-\\begin{tikzpicture}[scale=1.25]
-  \\coordinate (zi)  at ( 90:4.2);
-  \\coordinate (chou) at ( 60:4.2);
-  \\coordinate (yin)  at ( 30:4.2);
-  \\coordinate (mao)  at (  0:4.2);
-  \\coordinate (chen) at (330:4.2);
-  \\coordinate (si)   at (300:4.2);
-  \\coordinate (wu)   at (270:4.2);
-  \\coordinate (wei)  at (240:4.2);
-  \\coordinate (shen) at (210:4.2);
-  \\coordinate (you)  at (180:4.2);
-  \\coordinate (xu)   at (150:4.2);
-  \\coordinate (hai)  at (120:4.2);
+\begin{tikzpicture}[scale=1.25]
+  \coordinate (zi)  at ( 90:4.2);
+  \coordinate (chou) at ( 60:4.2);
+  \coordinate (yin)  at ( 30:4.2);
+  \coordinate (mao)  at (  0:4.2);
+  \coordinate (chen) at (330:4.2);
+  \coordinate (si)   at (300:4.2);
+  \coordinate (wu)   at (270:4.2);
+  \coordinate (wei)  at (240:4.2);
+  \coordinate (shen) at (210:4.2);
+  \coordinate (you)  at (180:4.2);
+  \coordinate (xu)   at (150:4.2);
+  \coordinate (hai)  at (120:4.2);
 
-  \\draw[thick, gray!60] (0,0) circle (4.2);
+  \draw[thick, gray!60] (0,0) circle (4.2);
 
-  \\foreach \\name/\\angle/\\text in {
+  \foreach \\name/\\angle/\\text in {
     zi/90/子, chou/60/丑, yin/30/寅, mao/0/卯,
     chen/330/辰, si/300/巳, wu/270/午, wei/240/未,
     shen/210/申, you/180/酉, xu/150/戌, hai/120/亥
   } {
-    \\fill[black] (\\angle:4.2) circle (2pt);
-    \\node[font=\\Large\\bfseries] at (\\angle:5.0) {\\text};
+    \fill[black] (\\angle:4.2) circle (2pt);
+    \node[font=\Large\bfseries] at (\\angle:5.0) {\\text};
   }
 
-  \\draw[orange!90!black, ultra thick] (90:4.2)  circle (12pt);
-  \\draw[teal!90!black,  ultra thick] (0:4.2)   circle (12pt);
-  \\draw[red!90!black,   ultra thick] (270:4.2) circle (12pt);
-  \\draw[gray!90!black,  ultra thick] (180:4.2) circle (12pt);
-  \\node[font=\\Large\\bfseries, orange!90!black] at (90:4.2)  {子};
-  \\node[font=\\Large\\bfseries, teal!90!black]  at (0:4.2)   {卯};
-  \\node[font=\\Large\\bfseries, red!90!black]   at (270:4.2) {午};
-  \\node[font=\\Large\\bfseries, gray!90!black]  at (180:4.2) {酉};
+  \draw[orange!90!black, ultra thick] (90:4.2)  circle (12pt);
+  \draw[teal!90!black,  ultra thick] (0:4.2)   circle (12pt);
+  \draw[red!90!black,   ultra thick] (270:4.2) circle (12pt);
+  \draw[gray!90!black,  ultra thick] (180:4.2) circle (12pt);
+  \node[font=\Large\bfseries, orange!90!black] at (90:4.2)  {子};
+  \node[font=\Large\bfseries, teal!90!black]  at (0:4.2)   {卯};
+  \node[font=\Large\bfseries, red!90!black]   at (270:4.2) {午};
+  \node[font=\Large\bfseries, gray!90!black]  at (180:4.2) {酉};
 
-  \\draw[orange!70!black, very thick] (shen) -- (zi) -- (chen) -- cycle;
-  \\draw[teal!70!black,  very thick] (hai)  -- (mao) -- (wei) -- cycle;
-  \\draw[red!70!black,   very thick] (yin)  -- (wu) -- (xu) -- cycle;
-  \\draw[gray!60!black,  very thick] (si)   -- (you) -- (chou) -- cycle;
+  \draw[orange!70!black, very thick] (shen) -- (zi) -- (chen) -- cycle;
+  \draw[teal!70!black,  very thick] (hai)  -- (mao) -- (wei) -- cycle;
+  \draw[red!70!black,   very thick] (yin)  -- (wu) -- (xu) -- cycle;
+  \draw[gray!60!black,  very thick] (si)   -- (you) -- (chou) -- cycle;
 
-  \\node[font=\\normalsize\\bfseries, orange!80!black] at ( 90:5.8) {水局};
-  \\node[font=\\normalsize\\bfseries, teal!80!black]  at (  0:5.8) {木局};
-  \\node[font=\\normalsize\\bfseries, red!80!black]   at (270:5.8) {火局};
-  \\node[font=\\normalsize\\bfseries, gray!80!black]  at (180:5.8) {金局};
+  \node[font=\normalsize\bfseries, orange!80!black] at ( 90:5.8) {水局};
+  \node[font=\normalsize\bfseries, teal!80!black]  at (  0:5.8) {木局};
+  \node[font=\normalsize\bfseries, red!80!black]   at (270:5.8) {火局};
+  \node[font=\normalsize\bfseries, gray!80!black]  at (180:5.8) {金局};
 
-  \\node[font=\\small\\bfseries, anchor=west] at (-6.5,-5.8) {三合局（实线三角）};
-  \\node[font=\\small, anchor=west] at (-6.5,-6.2) {橙:水 \\quad 青:木 \\quad 红:火 \\quad 灰:金};
-  \\node[font=\\small, anchor=west] at (-6.5,-6.8) {圈出的子、卯、午、酉为四正，核心地支};
+  \node[font=\small\bfseries, anchor=west] at (-6.5,-5.8) {三合局（实线三角）};
+  \node[font=\small, anchor=west] at (-6.5,-6.2) {橙:水 \quad 青:木 \quad 红:火 \quad 灰:金};
+  \node[font=\small, anchor=west] at (-6.5,-6.8) {圈出的子、卯、午、酉为四正，核心地支};
 
-  \\node[font=\\small\\bfseries, anchor=west] at (0.5,-5.8) {半合（聚合倾向，不等于完整成局）};
-  \\node[font=\\small, anchor=west] at (0.5,-6.2) {申子、子辰半合水 \\quad 亥卯、卯未半合木};
-  \\node[font=\\small, anchor=west] at (0.5,-6.6) {寅午、午戌半合火 \\quad 巳酉、酉丑半合金};
+  \node[font=\small\bfseries, anchor=west] at (0.5,-5.8) {半合（聚合倾向，不等于完整成局）};
+  \node[font=\small, anchor=west] at (0.5,-6.2) {申子、子辰半合水 \quad 亥卯、卯未半合木};
+  \node[font=\small, anchor=west] at (0.5,-6.6) {寅午、午戌半合火 \quad 巳酉、酉丑半合金};
   % 白色背景
-  \\begin{scope}[on background layer]
-    \\fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
-  \\end{scope}
-\\end{tikzpicture}
-\\end{document}
+  \begin{scope}[on background layer]
+    \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
+  \end{scope}
+\end{tikzpicture}
+\end{document}
