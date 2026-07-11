@@ -7,63 +7,58 @@
 \begin{document}
 \begin{tikzpicture}[scale=1.1]
 
-  % Title: 两仪
-  \node[font=\LARGE\bfseries] at (0,7.5) {两仪};
+  % ====== Top: 两仪 ======
+  \node[font=\LARGE\bfseries] at (0,8.5) {两仪};
 
-  % 阳爻
-  \draw[very thick] (-1.8,6.3) -- (1.8,6.3);
-  \node[font=\large\bfseries] at (0,5.8) {阳爻};
-  \node[font=\small] at (0,5.4) {显现、主动、明亮};
+  % Left: 阳
+  \node[font=\Huge\bfseries, red!60!black] at (-3.0,7.5) {阳};
+  \node[font=\small, align=center, text width=3cm] at (-3.0,6.4) {显现\主动\明亮\上升\外放};
 
-  % 阴爻
-  \draw[very thick] (-1.8,4.6) -- (-0.3,4.6);
-  \draw[very thick] (0.3,4.6) -- (1.8,4.6);
-  \node[font=\large\bfseries] at (0,4.1) {阴爻};
-  \node[font=\small] at (0,3.7) {隐藏、安静、幽暗};
+  % Right: 阴
+  \node[font=\Huge\bfseries, blue!60!black] at (3.0,7.5) {阴};
+  \node[font=\small, align=center, text width=3cm] at (3.0,6.4) {隐藏\安静\幽暗\下降\内敛};
 
   % Divider
-  \draw[dashed, gray!50] (-3.2,3.2) -- (3.2,3.2);
+  \draw[dashed, gray!50] (-5.5,5.5) -- (5.5,5.5);
 
-  % Title: 四象
-  \node[font=\LARGE\bfseries] at (0,2.8) {四象};
+  % ====== Bottom: 四象 ======
+  \node[font=\LARGE\bfseries] at (0,5.0) {四象};
+  \node[font=\small, gray] at (0,4.5) {阴阳消长的四个阶段};
 
-  % Four columns centered at x = -4.5, -1.5, 1.5, 4.5
-  % Column 1: 少阳 (orange)
-  \node[font=\large\bfseries, orange!70!black] at (-4.5,2.0) {少阳};
-  \draw[very thick] (-5.8,1.3) -- (-4.4,1.3);
-  \draw[very thick] (-5.8,0.8) -- (-4.8,0.8);
-  \draw[very thick] (-4.4,0.8) -- (-4.4,0.8);
-  \node[font=\small, align=center] at (-5.1,0.3) {清晨 \textperiodcentered 春};
-  \node[font=\small] at (-5.1,-0.2) {阴消阳长};
+  % Four nodes in a row
+  % 老阴 (purple)  少阳 (orange)  老阳 (red)  少阴 (blue)
 
-  % Column 2: 老阳 (red)
-  \node[font=\large\bfseries, red!70!black] at (-1.5,2.0) {老阳};
-  \draw[very thick] (-2.8,1.3) -- (-1.4,1.3);
-  \draw[very thick] (-2.8,0.8) -- (-1.4,0.8);
-  \node[font=\small, align=center] at (-2.1,0.3) {正午 \textperiodcentered 夏};
-  \node[font=\small] at (-2.1,-0.2) {阳极生阴};
+  % 老阴 at x=-4.5
+  \node[font=\Large\bfseries, purple!70!black] at (-4.5,3.5) {老阴};
+  \node[font=\small, align=center] at (-4.5,2.7) {阴达到极盛\午夜\冬};
+  \node[font=\small, gray, align=center] at (-4.5,1.7) {阴极生阳};
 
-  % Column 3: 少阴 (blue)
-  \node[font=\large\bfseries, blue!60!black] at (1.5,2.0) {少阴};
-  \draw[very thick] (0.2,1.3) -- (1.6,1.3);
-  \draw[very thick] (0.9,1.3) -- (0.9,0.8);
-  \draw[very thick] (0.2,0.8) -- (0.6,0.8);
-  \draw[very thick] (1.2,0.8) -- (1.6,0.8);
-  \node[font=\small, align=center] at (0.9,0.3) {傍晚 \textperiodcentered 秋};
-  \node[font=\small] at (0.9,-0.2) {阳消阴长};
+  % 少阳 at x=-1.5
+  \node[font=\Large\bfseries, orange!70!black] at (-1.5,3.5) {少阳};
+  \node[font=\small, align=center] at (-1.5,2.7) {阳刚开始生\清晨\春};
+  \node[font=\small, gray, align=center] at (-1.5,1.7) {阴消阳长};
 
-  % Column 4: 老阴 (purple)
-  \node[font=\large\bfseries, purple!70!black] at (4.5,2.0) {老阴};
-  \draw[very thick] (3.2,1.3) -- (4.0,1.3);
-  \draw[very thick] (4.4,1.3) -- (5.2,1.3);
-  \draw[very thick] (3.2,0.8) -- (4.0,0.8);
-  \draw[very thick] (4.4,0.8) -- (5.2,0.8);
-  \node[font=\small, align=center] at (3.6,0.3) {午夜 \textperiodcentered 冬};
-  \node[font=\small] at (3.6,-0.2) {阴极生阳};
+  % 老阳 at x=1.5
+  \node[font=\Large\bfseries, red!70!black] at (1.5,3.5) {老阳};
+  \node[font=\small, align=center] at (1.5,2.7) {阳达到极盛\正午\夏};
+  \node[font=\small, gray, align=center] at (1.5,1.7) {阳极生阴};
 
-  % Bottom cycle note
-  \node[font=\normalsize, gray!70!black] at (0,-1.2) {少阳 \textrightarrow 老阳 \textrightarrow 少阴 \textrightarrow 老阴 \textrightarrow 少阳 \textendash};
-  \node[font=\small, gray] at (0,-1.7) {阴阳消长，循环不息};
+  % 少阴 at x=4.5
+  \node[font=\Large\bfseries, blue!60!black] at (4.5,3.5) {少阴};
+  \node[font=\small, align=center] at (4.5,2.7) {阴刚开始生\傍晚\秋};
+  \node[font=\small, gray, align=center] at (4.5,1.7) {阳消阴长};
+
+  % Arrows between nodes (horizontal, below names but above descriptions)
+  % 老阴 -> 少阳
+  \draw[thick, ->, >=Stealth] (-3.3,3.5) -- (-2.7,3.5);
+  % 少阳 -> 老阳
+  \draw[thick, ->, >=Stealth] (-0.3,3.5) -- (0.3,3.5);
+  % 老阳 -> 少阴
+  \draw[thick, ->, >=Stealth] (2.7,3.5) -- (3.3,3.5);
+
+  % Cycle return arrow: 少阴 -> 老阴 (curved below)
+  \draw[thick, ->, >=Stealth] (4.5,1.3) to[bend right=30] (-4.5,1.3);
+  \node[font=\small, gray] at (0,0.2) {循环：老阴 \textrightarrow 少阳 \textrightarrow 老阳 \textrightarrow 少阴 \textrightarrow 老阴};
 
   % white bg
   \begin{scope}[on background layer]
