@@ -19,7 +19,6 @@
 
 ### 半合
 
-
 半合是三合局没有完全齐全时出现的关系。三合局本来由三个地支组成，如果只出现其中两个，尤其是其中包含核心地支，就可以形成"半合"的倾向。
 
 三合局的核心地支是四正：
@@ -76,7 +75,9 @@
 ## 速记
 
 **三合局口诀**：申子辰水、亥卯未木、寅午戌火、巳酉丑金
+
 **三会局口诀**：寅卯辰东木、巳午未南火、申酉戌西金、亥子丑北水
+
 **半合速记**：申子、子辰半合水；亥卯、卯未半合木；寅午、午戌半合火；巳酉、酉丑半合金。
 
 ## 相关笔记
@@ -84,5 +85,5 @@
 - [十二地支](/docs/foundations/08-earthly-branches.md)：地支的基本属性
 - [地支六合与六冲](/docs/foundations/10-six-combinations-and-six-clashes.md)：两两地支关系
 - [速查表](/docs/foundations/tables.md)：三合局表、三会局表
-- [术语表](/docs/foundations/glossary.md)：三合、三会
+- [术语表](/docs/foundations/glossary.md)：三合、半合、三会
 - [地支刑、害、破](/docs/foundations/12-punishment-harm-break.md)：刑害破的关系

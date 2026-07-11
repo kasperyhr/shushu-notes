@@ -18,6 +18,7 @@
 - [09. 十二生肖与地支](/docs/foundations/09-zodiac-and-branches.md)
 - [10. 地支六合与六冲](/docs/foundations/10-six-combinations-and-six-clashes.md)
 - [11. 三合局与三会局](/docs/foundations/11-three-harmony-and-three-meetings.md)
+- [12. 地支刑、害、破](/docs/foundations/12-punishment-harm-break.md)
 - [速查表](/docs/foundations/tables.md)
 - [术语表](/docs/foundations/glossary.md)
 
@@ -52,4 +53,3 @@
 
 - [术语索引](/docs/references/terminology.md)
 - [阅读清单](/docs/references/reading-list.md)
-- [12. 地支刑、害、破](/docs/foundations/12-punishment-harm-break.md)
