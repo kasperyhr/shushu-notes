@@ -58,11 +58,11 @@
 \draw[dashed, gray!45] (-6.0,4.15) -- (6.0,4.15);
 
 % ===== 四象 =====
-\node[font=\Huge\bfseries] at (0,3.45) {四象};
-\node[font=\small, gray!70!black] at (0,2.92) {阴阳消长的四个阶段};
+\node[font=\Huge\bfseries] at (0,3.25) {四象};
+\node[font=\small, gray!70!black] at (0,2.62) {阴阳消长的四个阶段};
 
 % 四象卡片
-\node[phasebox] (laoyin) at (-4.8,1.20) {
+\node[phasebox] (laoyin) at (-4.8,0.65) {
   {\Large\bfseries\color{purple!70!black} 老阴}\\[5pt]
   {\small 阴达到极盛}\\
   {\small 午夜}\\
@@ -70,7 +70,7 @@
   {\small\color{gray!70!black} 阴极生阳}
 };
 
-\node[phasebox] (shaoyang) at (-1.6,1.20) {
+\node[phasebox] (shaoyang) at (-1.6,0.65) {
   {\Large\bfseries\color{orange!85!black} 少阳}\\[5pt]
   {\small 阳刚开始生}\\
   {\small 清晨}\\
@@ -78,7 +78,7 @@
   {\small\color{gray!70!black} 阴消阳长}
 };
 
-\node[phasebox] (laoyang) at (1.6,1.20) {
+\node[phasebox] (laoyang) at (1.6,0.65) {
   {\Large\bfseries\color{red!70!black} 老阳}\\[5pt]
   {\small 阳达到极盛}\\
   {\small 正午}\\
@@ -86,7 +86,7 @@
   {\small\color{gray!70!black} 阳极生阴}
 };
 
-\node[phasebox] (shaoyin) at (4.8,1.20) {
+\node[phasebox] (shaoyin) at (4.8,0.65) {
   {\Large\bfseries\color{blue!70!black} 少阴}\\[5pt]
   {\small 阴刚开始生}\\
   {\small 傍晚}\\
@@ -101,10 +101,10 @@
 
 % 回环箭头：少阴 -> 老阴，走底部，不穿过卡片文字
 \draw[arrow]
-  (shaoyin.south) .. controls (2.8,-1.05) and (-2.8,-1.05) .. (laoyin.south);
+  (shaoyin.south) .. controls (2.8,-1.70) and (-2.8,-1.70) .. (laoyin.south);
 
 % 底部说明
-\node[font=\small, gray!75!black] at (0,-1.65)
+\node[font=\small, gray!75!black] at (0,-2.25)
   {循环：老阴 $\rightarrow$ 少阳 $\rightarrow$ 老阳 $\rightarrow$ 少阴 $\rightarrow$ 老阴};
 
 % 白色背景
