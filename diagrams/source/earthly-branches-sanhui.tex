@@ -1,65 +1,56 @@
-% 地支三会图
-% 用途：展示四个三会局，连续三个地支成一方之气
-\documentclass[tikz,border=10pt]{standalone}
-\usepackage{ctex}
-\usepackage{xcolor}
-\pagecolor{white}
-\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing, backgrounds}
+\\documentclass[tikz,border=10pt]{standalone}
+\\usepackage{ctex}
+\\usepackage{xcolor}
+\\pagecolor{white}
+\\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing, backgrounds}
 
-\begin{document}
-\begin{tikzpicture}[scale=1.3]
-  \coordinate (zi)  at ( 90:3.8);
-  \coordinate (chou) at ( 60:3.8);
-  \coordinate (yin)  at ( 30:3.8);
-  \coordinate (mao)  at (  0:3.8);
-  \coordinate (chen) at (330:3.8);
-  \coordinate (si)   at (300:3.8);
-  \coordinate (wu)   at (270:3.8);
-  \coordinate (wei)  at (240:3.8);
-  \coordinate (shen) at (210:3.8);
-  \coordinate (you)  at (180:3.8);
-  \coordinate (xu)   at (150:3.8);
-  \coordinate (hai)  at (120:3.8);
+\\begin{document}
 
-  % 三会扇形背景
-  \begin{scope}[on background layer]
-    \fill[green!15]  (30:4.1) arc(30:150:4.1) -- (0,0) -- cycle;
-    \fill[red!15]    (330:4.1) arc(330:30:4.1) -- (0,0) -- cycle;
-    \fill[orange!15] (210:4.1) arc(210:330:4.1) -- (0,0) -- cycle;
-    \fill[blue!15]   (150:4.1) arc(150:210:4.1) -- (0,0) -- cycle;
-  \end{scope}
+\\begin{tikzpicture}[scale=1.3]
+  \\coordinate (zi)  at ( 90:4.0);
+  \\coordinate (chou) at ( 60:4.0);
+  \\coordinate (yin)  at ( 30:4.0);
+  \\coordinate (mao)  at (  0:4.0);
+  \\coordinate (chen) at (330:4.0);
+  \\coordinate (si)   at (300:4.0);
+  \\coordinate (wu)   at (270:4.0);
+  \\coordinate (wei)  at (240:4.0);
+  \\coordinate (shen) at (210:4.0);
+  \\coordinate (you)  at (180:4.0);
+  \\coordinate (xu)   at (150:4.0);
+  \\coordinate (hai)  at (120:4.0);
 
-  \draw[thick, gray!60] (0,0) circle (3.8);
+  \\begin{scope}[on background layer]
+    \\fill[green!15]  (30:4.3) arc(30:150:4.3) -- (0,0) -- cycle;
+    \\fill[red!15]    (330:4.3) arc(330:30:4.3) -- (0,0) -- cycle;
+    \\fill[orange!15] (210:4.3) arc(210:330:4.3) -- (0,0) -- cycle;
+    \\fill[blue!15]   (150:4.3) arc(150:210:4.3) -- (0,0) -- cycle;
+  \\end{scope}
 
-  \foreach \name/\angle/\text in {
+  \\draw[thick, gray!60] (0,0) circle (4.0);
+
+  \\foreach \\name/\\angle/\\text in {
     zi/90/子, chou/60/丑, yin/30/寅, mao/0/卯,
     chen/330/辰, si/300/巳, wu/270/午, wei/240/未,
     shen/210/申, you/180/酉, xu/150/戌, hai/120/亥
   } {
-    \fill[black] (\angle:3.8) circle (2pt);
-    \node[font=\Large\bfseries] at (\angle:4.6) {\text};
+    \\fill[black] (\\angle:4.0) circle (2pt);
+    \\node[font=\\Large\\bfseries] at (\\angle:4.8) {\\text};
   }
 
-  % 三会局标签，分别放在四个方向区域
-  % 北方水：上方
-  \node[font=\normalsize\bfseries, blue!60!black] at (90:2.5) {北方水};
-  \node[font=\normalsize\bfseries, blue!60!black] at (90:1.8) {亥子丑};
-  % 东方木：右侧
-  \node[font=\normalsize\bfseries, green!60!black] at (0:2.5) {东方木};
-  \node[font=\normalsize\bfseries, green!60!black] at (0:1.8) {寅卯辰};
-  % 南方火：下方
-  \node[font=\normalsize\bfseries, red!60!black] at (270:2.5) {南方火};
-  \node[font=\normalsize\bfseries, red!60!black] at (270:1.8) {巳午未};
-  % 西方金：左侧
-  \node[font=\normalsize\bfseries, orange!60!black] at (180:2.5) {西方金};
-  \node[font=\normalsize\bfseries, orange!60!black] at (180:1.8) {申酉戌};
+  \\node[font=\\normalsize\\bfseries, blue!60!black] at (90:2.7) {北方水};
+  \\node[font=\\normalsize\\bfseries, blue!60!black] at (90:2.0) {亥子丑};
+  \\node[font=\\normalsize\\bfseries, green!60!black] at (0:2.7) {东方木};
+  \\node[font=\\normalsize\\bfseries, green!60!black] at (0:2.0) {寅卯辰};
+  \\node[font=\\normalsize\\bfseries, red!60!black] at (270:2.7) {南方火};
+  \\node[font=\\normalsize\\bfseries, red!60!black] at (270:2.0) {巳午未};
+  \\node[font=\\normalsize\\bfseries, orange!60!black] at (180:2.7) {西方金};
+  \\node[font=\\normalsize\\bfseries, orange!60!black] at (180:2.0) {申酉戌};
 
-  % 图例
-  \node[font=\small, anchor=west] at (-5.8,-5.2) {三会：三个连续地支连成一方之气};
-
-  % 白色背景，防止 GitHub dark mode 下透明 SVG 看不清
-  \begin{scope}[on background layer]
-    \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
-  \end{scope}
-\end{tikzpicture}
-\end{document}
+  \\node[font=\\small, anchor=west] at (-5.8,-5.5) {三会：三个连续地支连成一方之气};
+  % 白色背景
+  \\begin{scope}[on background layer]
+    \\fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
+  \\end{scope}
+\\end{tikzpicture}
+\\end{document}

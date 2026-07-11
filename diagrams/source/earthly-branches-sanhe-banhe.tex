@@ -1,75 +1,65 @@
-% 地支三合半合图
-% 用途：展示四个三合局和对应的半合关系
-\documentclass[tikz,border=10pt]{standalone}
-\usepackage{ctex}
-\usepackage{xcolor}
-\pagecolor{white}
-\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing, backgrounds}
+\\documentclass[tikz,border=10pt]{standalone}
+\\usepackage{ctex}
+\\usepackage{xcolor}
+\\pagecolor{white}
+\\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing, backgrounds}
 
-\begin{document}
-\begin{tikzpicture}[scale=1.2]
-  \coordinate (zi)  at ( 90:4.0);
-  \coordinate (chou) at ( 60:4.0);
-  \coordinate (yin)  at ( 30:4.0);
-  \coordinate (mao)  at (  0:4.0);
-  \coordinate (chen) at (330:4.0);
-  \coordinate (si)   at (300:4.0);
-  \coordinate (wu)   at (270:4.0);
-  \coordinate (wei)  at (240:4.0);
-  \coordinate (shen) at (210:4.0);
-  \coordinate (you)  at (180:4.0);
-  \coordinate (xu)   at (150:4.0);
-  \coordinate (hai)  at (120:4.0);
+\\begin{document}
 
-  \draw[thick, gray!60] (0,0) circle (4.0);
+\\begin{tikzpicture}[scale=1.25]
+  \\coordinate (zi)  at ( 90:4.2);
+  \\coordinate (chou) at ( 60:4.2);
+  \\coordinate (yin)  at ( 30:4.2);
+  \\coordinate (mao)  at (  0:4.2);
+  \\coordinate (chen) at (330:4.2);
+  \\coordinate (si)   at (300:4.2);
+  \\coordinate (wu)   at (270:4.2);
+  \\coordinate (wei)  at (240:4.2);
+  \\coordinate (shen) at (210:4.2);
+  \\coordinate (you)  at (180:4.2);
+  \\coordinate (xu)   at (150:4.2);
+  \\coordinate (hai)  at (120:4.2);
 
-  \foreach \name/\angle/\text in {
+  \\draw[thick, gray!60] (0,0) circle (4.2);
+
+  \\foreach \\name/\\angle/\\text in {
     zi/90/子, chou/60/丑, yin/30/寅, mao/0/卯,
     chen/330/辰, si/300/巳, wu/270/午, wei/240/未,
     shen/210/申, you/180/酉, xu/150/戌, hai/120/亥
   } {
-    \fill[black] (\angle:4.0) circle (2pt);
-    \node[font=\Large\bfseries] at (\angle:4.8) {\text};
+    \\fill[black] (\\angle:4.2) circle (2pt);
+    \\node[font=\\Large\\bfseries] at (\\angle:5.0) {\\text};
   }
 
-  % 核心地支（子卯午酉）高亮
-  \draw[orange!80!black, ultra thick] (90:4.0)  circle (12pt);
-  \draw[teal!80!black,  ultra thick] (0:4.0)   circle (12pt);
-  \draw[red!80!black,   ultra thick] (270:4.0) circle (12pt);
-  \draw[gray!80!black,  ultra thick] (180:4.0) circle (12pt);
-  \node[font=\Large\bfseries, orange!80!black] at (90:4.0)  {子};
-  \node[font=\Large\bfseries, teal!80!black]  at (0:4.0)   {卯};
-  \node[font=\Large\bfseries, red!80!black]   at (270:4.0) {午};
-  \node[font=\Large\bfseries, gray!80!black]  at (180:4.0) {酉};
+  \\draw[orange!90!black, ultra thick] (90:4.2)  circle (12pt);
+  \\draw[teal!90!black,  ultra thick] (0:4.2)   circle (12pt);
+  \\draw[red!90!black,   ultra thick] (270:4.2) circle (12pt);
+  \\draw[gray!90!black,  ultra thick] (180:4.2) circle (12pt);
+  \\node[font=\\Large\\bfseries, orange!90!black] at (90:4.2)  {子};
+  \\node[font=\\Large\\bfseries, teal!90!black]  at (0:4.2)   {卯};
+  \\node[font=\\Large\\bfseries, red!90!black]   at (270:4.2) {午};
+  \\node[font=\\Large\\bfseries, gray!90!black]  at (180:4.2) {酉};
 
-  % 三合局：实线三角 + 标签
-  \draw[orange!70!black, very thick] (shen) -- (zi) -- (chen) -- cycle;
-  \node[font=\normalsize\bfseries, orange!70!black, fill=white, inner sep=2pt] at (120:1.8) {水局};
-  \draw[teal!70!black, very thick] (hai) -- (mao) -- (wei) -- cycle;
-  \node[font=\normalsize\bfseries, teal!70!black, fill=white, inner sep=2pt] at (60:2.0) {木局};
-  \draw[red!70!black, very thick] (yin) -- (wu) -- (xu) -- cycle;
-  \node[font=\normalsize\bfseries, red!70!black, fill=white, inner sep=2pt] at (300:2.0) {火局};
-  \draw[gray!60!black, very thick] (si) -- (you) -- (chou) -- cycle;
-  \node[font=\normalsize\bfseries, gray!60!black, fill=white, inner sep=2pt] at (240:1.8) {金局};
+  \\draw[orange!70!black, very thick] (shen) -- (zi) -- (chen) -- cycle;
+  \\draw[teal!70!black,  very thick] (hai)  -- (mao) -- (wei) -- cycle;
+  \\draw[red!70!black,   very thick] (yin)  -- (wu) -- (xu) -- cycle;
+  \\draw[gray!60!black,  very thick] (si)   -- (you) -- (chou) -- cycle;
 
-  % 半合：虚线连接核心地支与两边
-  \draw[orange!70!black, dashed, thin] (zi) -- (shen);
-  \draw[orange!70!black, dashed, thin] (zi) -- (chen);
-  \draw[teal!70!black, dashed, thin] (mao) -- (hai);
-  \draw[teal!70!black, dashed, thin] (mao) -- (wei);
-  \draw[red!70!black, dashed, thin] (wu) -- (yin);
-  \draw[red!70!black, dashed, thin] (wu) -- (xu);
-  \draw[gray!60!black, dashed, thin] (you) -- (si);
-  \draw[gray!60!black, dashed, thin] (you) -- (chou);
+  \\node[font=\\normalsize\\bfseries, orange!80!black] at ( 90:5.8) {水局};
+  \\node[font=\\normalsize\\bfseries, teal!80!black]  at (  0:5.8) {木局};
+  \\node[font=\\normalsize\\bfseries, red!80!black]   at (270:5.8) {火局};
+  \\node[font=\\normalsize\\bfseries, gray!80!black]  at (180:5.8) {金局};
 
-  % 图例
-  \node[font=\small\bfseries, anchor=west] at (-6.0,-5.5) {\textbf{三合局}（实线三角）};
-  \node[font=\small, anchor=west] at (-6.0,-6.0) {橙:水   青:木   红:火   灰:金};
-  \node[font=\small\bfseries, anchor=west] at (-6.0,-6.5) {\textbf{半合}（虚线）：聚合倾向，不等于完整成局};
+  \\node[font=\\small\\bfseries, anchor=west] at (-6.5,-5.8) {三合局（实线三角）};
+  \\node[font=\\small, anchor=west] at (-6.5,-6.2) {橙:水 \\quad 青:木 \\quad 红:火 \\quad 灰:金};
+  \\node[font=\\small, anchor=west] at (-6.5,-6.8) {圈出的子、卯、午、酉为四正，核心地支};
 
-  % 白色背景，防止 GitHub dark mode 下透明 SVG 看不清
-  \begin{scope}[on background layer]
-    \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
-  \end{scope}
-\end{tikzpicture}
-\end{document}
+  \\node[font=\\small\\bfseries, anchor=west] at (0.5,-5.8) {半合（聚合倾向，不等于完整成局）};
+  \\node[font=\\small, anchor=west] at (0.5,-6.2) {申子、子辰半合水 \\quad 亥卯、卯未半合木};
+  \\node[font=\\small, anchor=west] at (0.5,-6.6) {寅午、午戌半合火 \\quad 巳酉、酉丑半合金};
+  % 白色背景
+  \\begin{scope}[on background layer]
+    \\fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
+  \\end{scope}
+\\end{tikzpicture}
+\\end{document}

@@ -36,10 +36,10 @@
    }
  
    % 方位标注
-   \node[font=\small\bfseries, blue!60] at ( 90:2.8) {北};
-   \node[font=\small\bfseries, blue!60] at (270:2.8) {南};
-   \node[font=\small\bfseries, blue!60] at (  0:2.8) {东};
-   \node[font=\small\bfseries, blue!60] at (180:2.8) {西};
+   \node[font=\normalsize\bfseries, blue!60] at ( 90:2.8) {北};
+   \node[font=\normalsize\bfseries, blue!60] at (270:2.8) {南};
+   \node[font=\normalsize\bfseries, blue!60] at (  0:2.8) {东};
+   \node[font=\normalsize\bfseries, blue!60] at (180:2.8) {西};
  
    % 四季区域（浅色背景弧）
    \begin{scope}[on background layer]
@@ -50,13 +50,13 @@
    \end{scope}
  
    % 季节标签
-   \node[font=\footnotesize, green!60!black] at (90:1.4)  {春};
-   \node[font=\footnotesize, red!60!black]   at (0:1.4)   {夏};
-   \node[font=\footnotesize, orange!60!black] at (270:1.4) {秋};
-   \node[font=\footnotesize, blue!60!black]  at (180:1.4) {冬};
+   \node[font=\small, green!60!black] at (90:1.4)  {春};
+   \node[font=\small, red!60!black]   at (0:1.4)   {夏};
+   \node[font=\small, orange!60!black] at (270:1.4) {秋};
+   \node[font=\small, blue!60!black]  at (180:1.4) {冬};
  
    % 中心标签
-   \node[font=\small, gray] at (0,0) {十二地支};
+   \node[font=\normalsize, gray] at (0,0) {十二地支};
   % ??????? GitHub dark mode ??? SVG ???
   \begin{scope}[on background layer]
     \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);

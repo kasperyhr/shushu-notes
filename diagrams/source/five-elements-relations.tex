@@ -1,57 +1,58 @@
-% 五行生克关系图
-% 用途：展示五行（木火土金水）的相生和相克关系
-\documentclass[tikz,border=10pt]{standalone}
-\usepackage{ctex}
-\usepackage{xcolor}
-\pagecolor{white}
-\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing, backgrounds}
+\\documentclass[tikz,border=10pt]{standalone}
+\\usepackage{ctex}
+\\usepackage{xcolor}
+\\pagecolor{white}
+\\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing, backgrounds}
 
-\begin{document}
-\begin{tikzpicture}[scale=1.4]
-  % 五行节点坐标（五边形排列）
-  \coordinate (mu)   at ( 90:3.2);
-  \coordinate (huo)  at ( 18:3.2);
-  \coordinate (tu)   at (306:3.2);
-  \coordinate (jin)  at (234:3.2);
-  \coordinate (shui) at (162:3.2);
+\\begin{document}
 
-  % 相生：外圈绿色弧形箭头（加粗）
-  \draw[green!50!black, ultra thick, ->, >=Stealth] (mu)   to[bend left=50] node[font=\normalsize\bfseries, midway, above right, fill=white, inner sep=2pt] {生} (huo);
-  \draw[green!50!black, ultra thick, ->, >=Stealth] (huo)  to[bend left=30] node[font=\normalsize\bfseries, midway, right, fill=white, inner sep=2pt] {生} (tu);
-  \draw[green!50!black, ultra thick, ->, >=Stealth] (tu)   to[bend left=30] node[font=\normalsize\bfseries, midway, below left, fill=white, inner sep=2pt] {生} (jin);
-  \draw[green!50!black, ultra thick, ->, >=Stealth] (jin)  to[bend left=30] node[font=\normalsize\bfseries, midway, left, fill=white, inner sep=2pt] {生} (shui);
-  \draw[green!50!black, ultra thick, ->, >=Stealth] (shui) to[bend left=30] node[font=\normalsize\bfseries, midway, above left, fill=white, inner sep=2pt] {生} (mu);
+\\begin{tikzpicture}[scale=1.5]
+  \\coordinate (mu)   at ( 90:3.0);
+  \\coordinate (huo)  at ( 18:3.0);
+  \\coordinate (tu)   at (306:3.0);
+  \\coordinate (jin)  at (234:3.0);
+  \\coordinate (shui) at (162:3.0);
 
-  % 相克：内部星形红色箭头（加粗）
-  \draw[red!70!black, ultra thick, ->, >=Stealth] (mu)   -- node[font=\normalsize\bfseries, midway, above right, fill=white, inner sep=2pt] {克} (tu);
-  \draw[red!70!black, ultra thick, ->, >=Stealth] (tu)   -- node[font=\normalsize\bfseries, midway, below, fill=white, inner sep=2pt] {克} (shui);
-  \draw[red!70!black, ultra thick, ->, >=Stealth] (shui) -- node[font=\normalsize\bfseries, midway, left, fill=white, inner sep=2pt] {克} (huo);
-  \draw[red!70!black, ultra thick, ->, >=Stealth] (huo)  -- node[font=\normalsize\bfseries, midway, right, fill=white, inner sep=2pt] {克} (jin);
-  \draw[red!70!black, ultra thick, ->, >=Stealth] (jin)  -- node[font=\normalsize\bfseries, midway, above left, fill=white, inner sep=2pt] {克} (mu);
+  \\draw[green!50!black, ultra thick, ->, >=Stealth, line width=1.8pt]
+    (mu)   to[bend left=55] node[font=\\normalsize\\bfseries, midway, fill=white, inner sep=2pt] {生} (huo);
+  \\draw[green!50!black, ultra thick, ->, >=Stealth, line width=1.8pt]
+    (huo)  to[bend left=35] node[font=\\normalsize\\bfseries, midway, fill=white, inner sep=2pt] {生} (tu);
+  \\draw[green!50!black, ultra thick, ->, >=Stealth, line width=1.8pt]
+    (tu)   to[bend left=35] node[font=\\normalsize\\bfseries, midway, fill=white, inner sep=2pt] {生} (jin);
+  \\draw[green!50!black, ultra thick, ->, >=Stealth, line width=1.8pt]
+    (jin)  to[bend left=35] node[font=\\normalsize\\bfseries, midway, fill=white, inner sep=2pt] {生} (shui);
+  \\draw[green!50!black, ultra thick, ->, >=Stealth, line width=1.8pt]
+    (shui) to[bend left=35] node[font=\\normalsize\\bfseries, midway, fill=white, inner sep=2pt] {生} (mu);
 
-  % 五行节点（加大）
-  \fill[green!60!black] (mu) circle (14pt);
-  \node[font=\Large\bfseries, white] at (mu) {木};
+  \\draw[red!70!black, ultra thick, ->, >=Stealth, line width=1.8pt]
+    (mu)   -- node[font=\\normalsize\\bfseries, midway, fill=white, inner sep=2pt] {克} (tu);
+  \\draw[red!70!black, ultra thick, ->, >=Stealth, line width=1.8pt]
+    (tu)   -- node[font=\\normalsize\\bfseries, midway, fill=white, inner sep=2pt] {克} (shui);
+  \\draw[red!70!black, ultra thick, ->, >=Stealth, line width=1.8pt]
+    (shui) -- node[font=\\normalsize\\bfseries, midway, fill=white, inner sep=2pt] {克} (huo);
+  \\draw[red!70!black, ultra thick, ->, >=Stealth, line width=1.8pt]
+    (huo)  -- node[font=\\normalsize\\bfseries, midway, fill=white, inner sep=2pt] {克} (jin);
+  \\draw[red!70!black, ultra thick, ->, >=Stealth, line width=1.8pt]
+    (jin)  -- node[font=\\normalsize\\bfseries, midway, fill=white, inner sep=2pt] {克} (mu);
 
-  \fill[red!60!black] (huo) circle (14pt);
-  \node[font=\Large\bfseries, white] at (huo) {火};
+  \\fill[green!60!black] (mu) circle (15pt);
+  \\node[font=\\Large\\bfseries, white] at (mu) {木};
+  \\fill[red!60!black] (huo) circle (15pt);
+  \\node[font=\\Large\\bfseries, white] at (huo) {火};
+  \\fill[yellow!60!black] (tu) circle (15pt);
+  \\node[font=\\Large\\bfseries, black] at (tu) {土};
+  \\fill[gray!60!black] (jin) circle (15pt);
+  \\node[font=\\Large\\bfseries, white] at (jin) {金};
+  \\fill[blue!60!black] (shui) circle (15pt);
+  \\node[font=\\Large\\bfseries, white] at (shui) {水};
 
-  \fill[yellow!60!black] (tu) circle (14pt);
-  \node[font=\Large\bfseries, black] at (tu) {土};
-
-  \fill[gray!60!black] (jin) circle (14pt);
-  \node[font=\Large\bfseries, white] at (jin) {金};
-
-  \fill[blue!60!black] (shui) circle (14pt);
-  \node[font=\Large\bfseries, white] at (shui) {水};
-
-  % 图例（放大）
-  \node[font=\normalsize, green!50!black, anchor=west] at (-4.8,-4.2) {外圈 \textbf{相生}：提供条件、滋养、增强};
-  \node[font=\normalsize, red!70!black, anchor=west]  at (-4.8,-4.8) {内部 \textbf{相克}：约束、控制、制衡};
-
-  % 白色背景，防止 GitHub dark mode 下透明 SVG 看不清
-  \begin{scope}[on background layer]
-    \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
-  \end{scope}
-\end{tikzpicture}
-\end{document}
+  \\node[font=\\small, green!50!black, anchor=west] at (-4.5,-4.0) {外圈 \\textbf{相生}：木 \\textrightarrow 火 \\textrightarrow 土 \\textrightarrow 金 \\textrightarrow 水 \\textrightarrow 木};
+  \\node[font=\\small, green!50!black, anchor=west] at (-4.5,-4.4) {提供条件、滋养、增强};
+  \\node[font=\\small, red!70!black, anchor=west]  at (-4.5,-5.0) {内部 \\textbf{相克}：木 \\textrightarrow 土 \\textrightarrow 水 \\textrightarrow 火 \\textrightarrow 金 \\textrightarrow 木};
+  \\node[font=\\small, red!70!black, anchor=west]  at (-4.5,-5.4) {约束、控制、制衡};
+  % 白色背景
+  \\begin{scope}[on background layer]
+    \\fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
+  \\end{scope}
+\\end{tikzpicture}
+\\end{document}
