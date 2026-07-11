@@ -13,33 +13,38 @@
   \coordinate (jin)  at (234:3.0);
   \coordinate (shui) at (162:3.0);
 
-  % 相生: outer circular arcs (clockwise, 72° each)
-  \draw[green!50!black, line width=2.2pt, ->, >=Stealth]
-    (mu)   arc[start angle=90,  delta angle=-72, radius=3.0]
+  % 相生: outer circular arcs (shortened to show arrowheads)
+  % mu(82°) -> huo(26°): start 82, delta -56
+  \draw[green!50!black, line width=2.2pt, -{Stealth[length=4mm,width=2.8mm]}]
+    (82:3.0) arc[start angle=82,  delta angle=-56, radius=3.0]
     node[font=\normalsize\bfseries, pos=0.5, fill=white, inner sep=2pt] {生};
-  \draw[green!50!black, line width=2.2pt, ->, >=Stealth]
-    (huo)  arc[start angle=18,  delta angle=-72, radius=3.0]
+  % huo(10°) -> tu(314°): start 10, delta -56
+  \draw[green!50!black, line width=2.2pt, -{Stealth[length=4mm,width=2.8mm]}]
+    (10:3.0) arc[start angle=10,  delta angle=-56, radius=3.0]
     node[font=\normalsize\bfseries, pos=0.5, fill=white, inner sep=2pt] {生};
-  \draw[green!50!black, line width=2.2pt, ->, >=Stealth]
-    (tu)   arc[start angle=306, delta angle=-72, radius=3.0]
+  % tu(298°) -> jin(242°): start 298, delta -56
+  \draw[green!50!black, line width=2.2pt, -{Stealth[length=4mm,width=2.8mm]}]
+    (298:3.0) arc[start angle=298, delta angle=-56, radius=3.0]
     node[font=\normalsize\bfseries, pos=0.5, fill=white, inner sep=2pt] {生};
-  \draw[green!50!black, line width=2.2pt, ->, >=Stealth]
-    (jin)  arc[start angle=234, delta angle=-72, radius=3.0]
+  % jin(226°) -> shui(170°): start 226, delta -56
+  \draw[green!50!black, line width=2.2pt, -{Stealth[length=4mm,width=2.8mm]}]
+    (226:3.0) arc[start angle=226, delta angle=-56, radius=3.0]
     node[font=\normalsize\bfseries, pos=0.5, fill=white, inner sep=2pt] {生};
-  \draw[green!50!black, line width=2.2pt, ->, >=Stealth]
-    (shui) arc[start angle=162, delta angle=-72, radius=3.0]
+  % shui(154°) -> mu(98°): start 154, delta -56
+  \draw[green!50!black, line width=2.2pt, -{Stealth[length=4mm,width=2.8mm]}]
+    (154:3.0) arc[start angle=154, delta angle=-56, radius=3.0]
     node[font=\normalsize\bfseries, pos=0.5, fill=white, inner sep=2pt] {生};
 
-  % 相克: internal star lines
-  \draw[red!70!black, line width=2pt, ->, >=Stealth]
+  % 相克: internal star lines (shortened to show arrowheads)
+  \draw[red!70!black, line width=2pt, shorten >=10pt, shorten <=10pt, -{Stealth[length=4mm,width=2.8mm]}]
     (mu)   -- node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {克} (tu);
-  \draw[red!70!black, line width=2pt, ->, >=Stealth]
+  \draw[red!70!black, line width=2pt, shorten >=10pt, shorten <=10pt, -{Stealth[length=4mm,width=2.8mm]}]
     (tu)   -- node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {克} (shui);
-  \draw[red!70!black, line width=2pt, ->, >=Stealth]
+  \draw[red!70!black, line width=2pt, shorten >=10pt, shorten <=10pt, -{Stealth[length=4mm,width=2.8mm]}]
     (shui) -- node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {克} (huo);
-  \draw[red!70!black, line width=2pt, ->, >=Stealth]
+  \draw[red!70!black, line width=2pt, shorten >=10pt, shorten <=10pt, -{Stealth[length=4mm,width=2.8mm]}]
     (huo)  -- node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {克} (jin);
-  \draw[red!70!black, line width=2pt, ->, >=Stealth]
+  \draw[red!70!black, line width=2pt, shorten >=10pt, shorten <=10pt, -{Stealth[length=4mm,width=2.8mm]}]
     (jin)  -- node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {克} (mu);
 
   % Nodes
