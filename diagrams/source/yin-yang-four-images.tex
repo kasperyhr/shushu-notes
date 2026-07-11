@@ -2,6 +2,8 @@
  % 用途：展示阴阳到四象的演化：阴爻、阳爻 → 少阳、老阳、少阴、老阴，搭配一天和四季
  \documentclass[tikz,border=10pt]{standalone}
  \usepackage{ctex}
+\usepackage{xcolor}
+\pagecolor{white}
  \usetikzlibrary{arrows.meta, positioning, calc, backgrounds}
  
  \begin{document}
@@ -64,5 +66,9 @@
    % 底部：动态循环箭头
    \node[font=\footnotesize, gray] at (0,-1.2) {少阳 → 老阳 → 少阴 → 老阴 → 少阳 …};
    \node[font=\footnotesize, gray] at (0,-1.6) {阴阳消长，循环不息};
- \end{tikzpicture}
+   % ??????? GitHub dark mode ??? SVG ???
+  \begin{scope}[on background layer]
+    \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
+  \end{scope}
+\end{tikzpicture}
  \end{document}

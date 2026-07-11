@@ -2,7 +2,9 @@
  % 用途：展示寅巳申三刑、丑未戌三刑、子卯相刑、辰午酉亥自刑
  \documentclass[tikz,border=10pt]{standalone}
  \usepackage{ctex}
- \usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing}
+\usepackage{xcolor}
+\pagecolor{white}
+ \usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing, backgrounds}
  
  \begin{document}
  \begin{tikzpicture}[scale=1.2]
@@ -53,5 +55,9 @@
    \node[font=\footnotesize, anchor=west] at (-5.5,-5.5) {\textbf{相刑}（波折线）：子卯相刑};
    \node[font=\footnotesize, anchor=west] at (-5.5,-6.0) {\textbf{自刑}（自环）：辰、午、酉、亥};
    \node[font=\footnotesize, anchor=west] at (-5.5,-6.5) {刑 = 拧巴、内耗、结构性摩擦};
- \end{tikzpicture}
+   % ??????? GitHub dark mode ??? SVG ???
+  \begin{scope}[on background layer]
+    \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
+  \end{scope}
+\end{tikzpicture}
  \end{document}

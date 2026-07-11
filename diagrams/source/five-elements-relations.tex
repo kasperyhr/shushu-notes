@@ -1,50 +1,57 @@
-% ???????
-% ??????????????????????
+% 五行生克关系图
+% 用途：展示五行（木火土金水）的相生和相克关系
 \documentclass[tikz,border=10pt]{standalone}
 \usepackage{ctex}
-\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing}
+\usepackage{xcolor}
+\pagecolor{white}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing, backgrounds}
 
 \begin{document}
 \begin{tikzpicture}[scale=1.3]
-  % ?????????????
-  \coordinate (mu)  at ( 90:3.0);   % ?
-  \coordinate (huo) at ( 18:3.0);   % ?
-  \coordinate (tu)  at (306:3.0);   % ?
-  \coordinate (jin) at (234:3.0);   % ?
-  \coordinate (shui) at (162:3.0);  % ?
+  % 五行节点坐标（五边形排列）
+  \coordinate (mu)   at ( 90:3.0);  % 木
+  \coordinate (huo)  at ( 18:3.0);  % 火
+  \coordinate (tu)   at (306:3.0);  % 土
+  \coordinate (jin)  at (234:3.0);  % 金
+  \coordinate (shui) at (162:3.0);  % 水
 
-  % ????????????????
-  \draw[green!50!black, very thick, ->, >=Stealth] (mu)   to[bend left=40] node[font=\footnotesize, midway, above right] {?} (huo);
-  \draw[green!50!black, very thick, ->, >=Stealth] (huo)  to[bend left=20] node[font=\footnotesize, midway, right] {?} (tu);
-  \draw[green!50!black, very thick, ->, >=Stealth] (tu)   to[bend left=20] node[font=\footnotesize, midway, below left] {?} (jin);
-  \draw[green!50!black, very thick, ->, >=Stealth] (jin)  to[bend left=20] node[font=\footnotesize, midway, left] {?} (shui);
-  \draw[green!50!black, very thick, ->, >=Stealth] (shui) to[bend left=20] node[font=\footnotesize, midway, above left] {?} (mu);
+  % 相生：外圈绿色弧形箭头
+  \draw[green!50!black, very thick, ->, >=Stealth] (mu)   to[bend left=40] node[font=\footnotesize, midway, above right, fill=white, inner sep=1pt] {生} (huo);
+  \draw[green!50!black, very thick, ->, >=Stealth] (huo)  to[bend left=20] node[font=\footnotesize, midway, right, fill=white, inner sep=1pt] {生} (tu);
+  \draw[green!50!black, very thick, ->, >=Stealth] (tu)   to[bend left=20] node[font=\footnotesize, midway, below left, fill=white, inner sep=1pt] {生} (jin);
+  \draw[green!50!black, very thick, ->, >=Stealth] (jin)  to[bend left=20] node[font=\footnotesize, midway, left, fill=white, inner sep=1pt] {生} (shui);
+  \draw[green!50!black, very thick, ->, >=Stealth] (shui) to[bend left=20] node[font=\footnotesize, midway, above left, fill=white, inner sep=1pt] {生} (mu);
 
-  % ???????????
-  \draw[red!70!black, thick, ->, >=Stealth] (mu)   -- node[font=\footnotesize, midway, above right] {?} (tu);
-  \draw[red!70!black, thick, ->, >=Stealth] (tu)   -- node[font=\footnotesize, midway, below] {?} (shui);
-  \draw[red!70!black, thick, ->, >=Stealth] (shui) -- node[font=\footnotesize, midway, left] {?} (huo);
-  \draw[red!70!black, thick, ->, >=Stealth] (huo)  -- node[font=\footnotesize, midway, right] {?} (jin);
-  \draw[red!70!black, thick, ->, >=Stealth] (jin)  -- node[font=\footnotesize, midway, above left] {?} (mu);
+  % 相克：内部星形红色箭头
+  \draw[red!70!black, thick, ->, >=Stealth] (mu)   -- node[font=\footnotesize, midway, above right, fill=white, inner sep=1pt] {克} (tu);
+  \draw[red!70!black, thick, ->, >=Stealth] (tu)   -- node[font=\footnotesize, midway, below, fill=white, inner sep=1pt] {克} (shui);
+  \draw[red!70!black, thick, ->, >=Stealth] (shui) -- node[font=\footnotesize, midway, left, fill=white, inner sep=1pt] {克} (huo);
+  \draw[red!70!black, thick, ->, >=Stealth] (huo)  -- node[font=\footnotesize, midway, right, fill=white, inner sep=1pt] {克} (jin);
+  \draw[red!70!black, thick, ->, >=Stealth] (jin)  -- node[font=\footnotesize, midway, above left, fill=white, inner sep=1pt] {克} (mu);
 
-  % ???????????? \foreach ?? xcolor ??????????
+  % 五行节点
   \fill[green!60!black] (mu) circle (12pt);
-  \node[font=\large\bfseries, white] at (mu) {?};
+  \node[font=\large\bfseries, white] at (mu) {木};
 
   \fill[red!60!black] (huo) circle (12pt);
-  \node[font=\large\bfseries, white] at (huo) {?};
+  \node[font=\large\bfseries, white] at (huo) {火};
 
   \fill[yellow!60!black] (tu) circle (12pt);
-  \node[font=\large\bfseries, black] at (tu) {?};
+  \node[font=\large\bfseries, black] at (tu) {土};
 
   \fill[gray!60!black] (jin) circle (12pt);
-  \node[font=\large\bfseries, white] at (jin) {?};
+  \node[font=\large\bfseries, white] at (jin) {金};
 
   \fill[blue!60!black] (shui) circle (12pt);
-  \node[font=\large\bfseries, white] at (shui) {?};
+  \node[font=\large\bfseries, white] at (shui) {水};
 
-  % ??
-  \node[font=\footnotesize, green!50!black, anchor=west] at (-4.5,-4.2) {?? \bfseries ?????????????};
-  \node[font=\footnotesize, red!70!black, anchor=west]  at (-4.5,-4.7) {?? \bfseries ???????????};
+  % 图例
+  \node[font=\footnotesize, green!50!black, anchor=west] at (-4.5,-4.2) {外圈 \bfseries 相生：提供条件、滋养、增强};
+  \node[font=\footnotesize, red!70!black, anchor=west]  at (-4.5,-4.7) {内部 \bfseries 相克：约束、控制、制衡};
+
+  % 白色背景，防止 GitHub dark mode 下透明 SVG 看不清
+  \begin{scope}[on background layer]
+    \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
+  \end{scope}
 \end{tikzpicture}
 \end{document}

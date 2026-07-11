@@ -2,7 +2,9 @@
  % 用途：展示六对地支两两相合的关系，代表结合、牵连、绑定
  \documentclass[tikz,border=10pt]{standalone}
  \usepackage{ctex}
- \usetikzlibrary{arrows.meta, positioning, calc}
+\usepackage{xcolor}
+\pagecolor{white}
+ \usetikzlibrary{arrows.meta, positioning, calc, backgrounds}
  
  \begin{document}
  \begin{tikzpicture}[scale=1.2]
@@ -42,5 +44,9 @@
    % 图例
    \node[font=\footnotesize, red!70!black, anchor=west] at (-5.5,-4.5) {六合：结合、牵连、绑定};
    \draw[red!70!black, very thick] (-5.5,-4.2) -- (-4.8,-4.2);
- \end{tikzpicture}
+   % ??????? GitHub dark mode ??? SVG ???
+  \begin{scope}[on background layer]
+    \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
+  \end{scope}
+\end{tikzpicture}
  \end{document}
