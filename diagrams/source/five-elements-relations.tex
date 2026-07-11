@@ -5,36 +5,42 @@
 \usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing, backgrounds}
 
 \begin{document}
-
 \begin{tikzpicture}[scale=1.5]
+  % Outer reference circle
+  \draw[gray!40, thin] (0,0) circle (3.0);
+
+  % Five-element nodes evenly on circle
   \coordinate (mu)   at ( 90:3.0);
   \coordinate (huo)  at ( 18:3.0);
   \coordinate (tu)   at (306:3.0);
   \coordinate (jin)  at (234:3.0);
   \coordinate (shui) at (162:3.0);
 
-  \draw[green!50!black, ultra thick, ->, >=Stealth, line width=1.8pt]
-    (mu)   to[bend left=55] node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {生} (huo);
-  \draw[green!50!black, ultra thick, ->, >=Stealth, line width=1.8pt]
-    (huo)  to[bend left=35] node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {生} (tu);
-  \draw[green!50!black, ultra thick, ->, >=Stealth, line width=1.8pt]
-    (tu)   to[bend left=35] node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {生} (jin);
-  \draw[green!50!black, ultra thick, ->, >=Stealth, line width=1.8pt]
-    (jin)  to[bend left=35] node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {生} (shui);
-  \draw[green!50!black, ultra thick, ->, >=Stealth, line width=1.8pt]
-    (shui) to[bend left=35] node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {生} (mu);
+  % 相生: outer arc arrows (clockwise)
+  \draw[green!50!black, ultra thick, ->, >=Stealth, line width=2pt]
+    (mu)   to[bend left=50] node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {生} (huo);
+  \draw[green!50!black, ultra thick, ->, >=Stealth, line width=2pt]
+    (huo)  to[bend left=30] node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {生} (tu);
+  \draw[green!50!black, ultra thick, ->, >=Stealth, line width=2pt]
+    (tu)   to[bend left=30] node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {生} (jin);
+  \draw[green!50!black, ultra thick, ->, >=Stealth, line width=2pt]
+    (jin)  to[bend left=30] node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {生} (shui);
+  \draw[green!50!black, ultra thick, ->, >=Stealth, line width=2pt]
+    (shui) to[bend left=30] node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {生} (mu);
 
-  \draw[red!70!black, ultra thick, ->, >=Stealth, line width=1.8pt]
+  % 相克: internal star arrows
+  \draw[red!70!black, ultra thick, ->, >=Stealth, line width=2pt]
     (mu)   -- node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {克} (tu);
-  \draw[red!70!black, ultra thick, ->, >=Stealth, line width=1.8pt]
+  \draw[red!70!black, ultra thick, ->, >=Stealth, line width=2pt]
     (tu)   -- node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {克} (shui);
-  \draw[red!70!black, ultra thick, ->, >=Stealth, line width=1.8pt]
+  \draw[red!70!black, ultra thick, ->, >=Stealth, line width=2pt]
     (shui) -- node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {克} (huo);
-  \draw[red!70!black, ultra thick, ->, >=Stealth, line width=1.8pt]
+  \draw[red!70!black, ultra thick, ->, >=Stealth, line width=2pt]
     (huo)  -- node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {克} (jin);
-  \draw[red!70!black, ultra thick, ->, >=Stealth, line width=1.8pt]
+  \draw[red!70!black, ultra thick, ->, >=Stealth, line width=2pt]
     (jin)  -- node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {克} (mu);
 
+  % Nodes
   \fill[green!60!black] (mu) circle (15pt);
   \node[font=\Large\bfseries, white] at (mu) {木};
   \fill[red!60!black] (huo) circle (15pt);
@@ -46,11 +52,13 @@
   \fill[blue!60!black] (shui) circle (15pt);
   \node[font=\Large\bfseries, white] at (shui) {水};
 
+  % Legend footnotes
   \node[font=\small, green!50!black, anchor=west] at (-4.5,-4.0) {外圈 \textbf{相生}：木 \textrightarrow 火 \textrightarrow 土 \textrightarrow 金 \textrightarrow 水 \textrightarrow 木};
   \node[font=\small, green!50!black, anchor=west] at (-4.5,-4.4) {提供条件、滋养、增强};
   \node[font=\small, red!70!black, anchor=west]  at (-4.5,-5.0) {内部 \textbf{相克}：木 \textrightarrow 土 \textrightarrow 水 \textrightarrow 火 \textrightarrow 金 \textrightarrow 木};
   \node[font=\small, red!70!black, anchor=west]  at (-4.5,-5.4) {约束、控制、制衡};
-  % 白色背景
+
+  % white bg
   \begin{scope}[on background layer]
     \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
   \end{scope}

@@ -5,7 +5,6 @@
 \usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing, backgrounds}
 
 \begin{document}
-
 \begin{tikzpicture}[scale=1.25]
   \coordinate (zi)  at ( 90:4.2);
   \coordinate (chou) at ( 60:4.2);
@@ -31,33 +30,33 @@
     \node[font=\Large\bfseries] at (\angle:5.0) {\text};
   }
 
-  \draw[orange!90!black, ultra thick] (90:4.2)  circle (12pt);
-  \draw[teal!90!black,  ultra thick] (0:4.2)   circle (12pt);
-  \draw[red!90!black,   ultra thick] (270:4.2) circle (12pt);
-  \draw[gray!90!black,  ultra thick] (180:4.2) circle (12pt);
-  \node[font=\Large\bfseries, orange!90!black] at (90:4.2)  {子};
-  \node[font=\Large\bfseries, teal!90!black]  at (0:4.2)   {卯};
-  \node[font=\Large\bfseries, red!90!black]   at (270:4.2) {午};
-  \node[font=\Large\bfseries, gray!90!black]  at (180:4.2) {酉};
+  % Highlight 四正 with circles only (no duplicate text)
+  \draw[orange!90!black, ultra thick] (90:4.2)  circle (13pt);
+  \draw[teal!90!black,  ultra thick] (0:4.2)   circle (13pt);
+  \draw[red!90!black,   ultra thick] (270:4.2) circle (13pt);
+  \draw[gray!90!black,  ultra thick] (180:4.2) circle (13pt);
 
+  % 三合局 triangles
   \draw[orange!70!black, very thick] (shen) -- (zi) -- (chen) -- cycle;
   \draw[teal!70!black,  very thick] (hai)  -- (mao) -- (wei) -- cycle;
   \draw[red!70!black,   very thick] (yin)  -- (wu) -- (xu) -- cycle;
   \draw[gray!60!black,  very thick] (si)   -- (you) -- (chou) -- cycle;
 
+  % Bureau names outside 四正
   \node[font=\normalsize\bfseries, orange!80!black] at ( 90:5.8) {水局};
   \node[font=\normalsize\bfseries, teal!80!black]  at (  0:5.8) {木局};
   \node[font=\normalsize\bfseries, red!80!black]   at (270:5.8) {火局};
   \node[font=\normalsize\bfseries, gray!80!black]  at (180:5.8) {金局};
 
+  % Legend
   \node[font=\small\bfseries, anchor=west] at (-6.5,-5.8) {三合局（实线三角）};
   \node[font=\small, anchor=west] at (-6.5,-6.2) {橙:水 \quad 青:木 \quad 红:火 \quad 灰:金};
-  \node[font=\small, anchor=west] at (-6.5,-6.8) {圈出的子、卯、午、酉为四正，核心地支};
+  \node[font=\small, anchor=west] at (-6.5,-6.8) {圈出的子、卯、午、酉为四正，也是三合局的核心地支};
 
   \node[font=\small\bfseries, anchor=west] at (0.5,-5.8) {半合（聚合倾向，不等于完整成局）};
   \node[font=\small, anchor=west] at (0.5,-6.2) {申子、子辰半合水 \quad 亥卯、卯未半合木};
   \node[font=\small, anchor=west] at (0.5,-6.6) {寅午、午戌半合火 \quad 巳酉、酉丑半合金};
-  % 白色背景
+  % white bg
   \begin{scope}[on background layer]
     \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
   \end{scope}
