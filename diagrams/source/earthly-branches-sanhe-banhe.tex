@@ -1,82 +1,75 @@
- % 地支三合半合图
- % 用途：展示四个三合局和对应的半合关系
- \documentclass[tikz,border=10pt]{standalone}
- \usepackage{ctex}
+% \u5730\u652f\u4e09\u5408\u534a\u5408\u56fe
+% \u7528\u9014\uff1a\u5c55\u793a\u56db\u4e2a\u4e09\u5408\u5c40\u548c\u5bf9\u5e94\u7684\u534a\u5408\u5173\u7cfb
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{ctex}
 \usepackage{xcolor}
 \pagecolor{white}
- \usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing, backgrounds}
- 
- \begin{document}
- \begin{tikzpicture}[scale=1.2]
-   \coordinate (zi)  at ( 90:3.5);
-   \coordinate (chou) at ( 60:3.5);
-   \coordinate (yin)  at ( 30:3.5);
-   \coordinate (mao)  at (  0:3.5);
-   \coordinate (chen) at (330:3.5);
-   \coordinate (si)   at (300:3.5);
-   \coordinate (wu)   at (270:3.5);
-   \coordinate (wei)  at (240:3.5);
-   \coordinate (shen) at (210:3.5);
-   \coordinate (you)  at (180:3.5);
-   \coordinate (xu)   at (150:3.5);
-   \coordinate (hai)  at (120:3.5);
- 
-   \draw[thick, gray!60] (0,0) circle (3.5);
- 
-   \foreach \name/\angle/\text in {
-     zi/90/子, chou/60/丑, yin/30/寅, mao/0/卯,
-     chen/330/辰, si/300/巳, wu/270/午, wei/240/未,
-     shen/210/申, you/180/酉, xu/150/戌, hai/120/亥
-   } {
-     \fill[black] (\angle:3.5) circle (2pt);
-     \node[font=\large] at (\angle:4.2) {\text};
-   }
- 
-   % 标记核心地支（子卯午酉）加外圈
-   \draw[orange!80!black, thick] (90:3.5)  circle (10pt);  % 子
-   \draw[teal!80!black,  thick] (0:3.5)   circle (10pt);  % 卯
-   \draw[red!80!black,   thick] (270:3.5) circle (10pt);  % 午
-   \draw[gray!80!black, thick] (180:3.5) circle (10pt);  % 酉
- 
-   \node[font=\footnotesize, orange!80!black] at ( 90:3.5) {子};
-   \node[font=\footnotesize, teal!80!black]  at (  0:3.5) {卯};
-   \node[font=\footnotesize, red!80!black]   at (270:3.5) {午};
-   \node[font=\footnotesize, gray!80!black]  at (180:3.5) {酉};
- 
-   % 三合局：申子辰合水（橙色三角形实线）
-   \draw[orange!70!black, thick] (shen) -- (zi) -- (chen) -- cycle;
-   % 亥卯未合木（青色三角形实线）
-   \draw[teal!70!black, thick] (hai) -- (mao) -- (wei) -- cycle;
-   % 寅午戌合火（红色三角形实线）
-   \draw[red!70!black, thick] (yin) -- (wu) -- (xu) -- cycle;
-   % 巳酉丑合金（灰色三角形实线）
-   \draw[gray!60!black, thick] (si) -- (you) -- (chou) -- cycle;
- 
-   % 半合：虚线连接核心地支与两边
-   \draw[orange!70!black, dashed, thin] (zi) -- (shen);
-   \draw[orange!70!black, dashed, thin] (zi) -- (chen);
-   \draw[teal!70!black, dashed, thin] (mao) -- (hai);
-   \draw[teal!70!black, dashed, thin] (mao) -- (wei);
-   \draw[red!70!black, dashed, thin] (wu) -- (yin);
-   \draw[red!70!black, dashed, thin] (wu) -- (xu);
-   \draw[gray!60!black, dashed, thin] (you) -- (si);
-   \draw[gray!60!black, dashed, thin] (you) -- (chou);
- 
-   % 图例
-   \node[font=\footnotesize, anchor=west] at (-5.5,-4.8) {\textbf{三合局}（实线三角）：};
-   \draw[orange!70!black, thick] (-4.2,-4.8) -- (-3.7,-4.8);
-   \node[font=\footnotesize, orange!70!black, anchor=west] at (-3.6,-4.8) {申子辰水};
-   \draw[teal!70!black, thick] (-2.4,-4.8) -- (-1.9,-4.8);
-   \node[font=\footnotesize, teal!70!black, anchor=west] at (-1.8,-4.8) {亥卯未木};
-   \draw[red!70!black, thick] (-0.6,-4.8) -- (-0.1,-4.8);
-   \node[font=\footnotesize, red!70!black, anchor=west] at (0,-4.8) {寅午戌火};
-   \draw[gray!60!black, thick] (1.2,-4.8) -- (1.7,-4.8);
-   \node[font=\footnotesize, gray!60!black, anchor=west] at (1.8,-4.8) {巳酉丑金};
- 
-   \node[font=\footnotesize, anchor=west] at (-5.5,-5.5) {\textbf{半合}（虚线）：聚合倾向，不等于完整成局};
-   % ??????? GitHub dark mode ??? SVG ???
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing, backgrounds}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.2]
+  \coordinate (zi)  at ( 90:4.0);
+  \coordinate (chou) at ( 60:4.0);
+  \coordinate (yin)  at ( 30:4.0);
+  \coordinate (mao)  at (  0:4.0);
+  \coordinate (chen) at (330:4.0);
+  \coordinate (si)   at (300:4.0);
+  \coordinate (wu)   at (270:4.0);
+  \coordinate (wei)  at (240:4.0);
+  \coordinate (shen) at (210:4.0);
+  \coordinate (you)  at (180:4.0);
+  \coordinate (xu)   at (150:4.0);
+  \coordinate (hai)  at (120:4.0);
+
+  \draw[thick, gray!60] (0,0) circle (4.0);
+
+  \foreach \name/\angle/\text in {
+    zi/90/\u5b50, chou/60/\u4e11, yin/30/\u5bc5, mao/0/\u536f,
+    chen/330/\u8fb0, si/300/\u5df3, wu/270/\u5348, wei/240/\u672a,
+    shen/210/\u7533, you/180/\u9149, xu/150/\u620c, hai/120/\u4ea5
+  } {
+    \fill[black] (\angle:4.0) circle (2pt);
+    \node[font=\Large\bfseries] at (\angle:4.8) {\text};
+  }
+
+  % \u6838\u5fc3\u5730\u652f\uff08\u5b50\u536f\u5348\u9149\uff09\u9ad8\u4eae
+  \draw[orange!80!black, ultra thick] (90:4.0)  circle (12pt);
+  \draw[teal!80!black,  ultra thick] (0:4.0)   circle (12pt);
+  \draw[red!80!black,   ultra thick] (270:4.0) circle (12pt);
+  \draw[gray!80!black,  ultra thick] (180:4.0) circle (12pt);
+  \node[font=\Large\bfseries, orange!80!black] at (90:4.0)  {\u5b50};
+  \node[font=\Large\bfseries, teal!80!black]  at (0:4.0)   {\u536f};
+  \node[font=\Large\bfseries, red!80!black]   at (270:4.0) {\u5348};
+  \node[font=\Large\bfseries, gray!80!black]  at (180:4.0) {\u9149};
+
+  % \u4e09\u5408\u5c40\uff1a\u5b9e\u7ebf\u4e09\u89d2 + \u6807\u7b7e
+  \draw[orange!70!black, very thick] (shen) -- (zi) -- (chen) -- cycle;
+  \node[font=\normalsize\bfseries, orange!70!black, fill=white, inner sep=2pt] at (120:1.8) {\u6c34\u5c40};
+  \draw[teal!70!black, very thick] (hai) -- (mao) -- (wei) -- cycle;
+  \node[font=\normalsize\bfseries, teal!70!black, fill=white, inner sep=2pt] at (60:2.0) {\u6728\u5c40};
+  \draw[red!70!black, very thick] (yin) -- (wu) -- (xu) -- cycle;
+  \node[font=\normalsize\bfseries, red!70!black, fill=white, inner sep=2pt] at (300:2.0) {\u706b\u5c40};
+  \draw[gray!60!black, very thick] (si) -- (you) -- (chou) -- cycle;
+  \node[font=\normalsize\bfseries, gray!60!black, fill=white, inner sep=2pt] at (240:1.8) {\u91d1\u5c40};
+
+  % \u534a\u5408\uff1a\u865a\u7ebf\u8fde\u63a5\u6838\u5fc3\u5730\u652f\u4e0e\u4e24\u8fb9
+  \draw[orange!70!black, dashed, thin] (zi) -- (shen);
+  \draw[orange!70!black, dashed, thin] (zi) -- (chen);
+  \draw[teal!70!black, dashed, thin] (mao) -- (hai);
+  \draw[teal!70!black, dashed, thin] (mao) -- (wei);
+  \draw[red!70!black, dashed, thin] (wu) -- (yin);
+  \draw[red!70!black, dashed, thin] (wu) -- (xu);
+  \draw[gray!60!black, dashed, thin] (you) -- (si);
+  \draw[gray!60!black, dashed, thin] (you) -- (chou);
+
+  % \u56fe\u4f8b
+  \node[font=\small\bfseries, anchor=west] at (-6.0,-5.5) {\textbf{\u4e09\u5408\u5c40}\uff08\u5b9e\u7ebf\u4e09\u89d2\uff09};
+  \node[font=\small, anchor=west] at (-6.0,-6.0) {\u6a59:\u6c34 \u00a0 \u9752:\u6728 \u00a0 \u7ea2:\u706b \u00a0 \u7070:\u91d1};
+  \node[font=\small\bfseries, anchor=west] at (-6.0,-6.5) {\textbf{\u534a\u5408}\uff08\u865a\u7ebf\uff09\uff1a\u805a\u5408\u503e\u5411\uff0c\u4e0d\u7b49\u4e8e\u5b8c\u6574\u6210\u5c40};
+
+  % \u767d\u8272\u80cc\u666f\uff0c\u9632\u6b62 GitHub dark mode \u4e0b\u900f\u660e SVG \u770b\u4e0d\u6e05
   \begin{scope}[on background layer]
     \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
   \end{scope}
 \end{tikzpicture}
- \end{document}
+\end{document}

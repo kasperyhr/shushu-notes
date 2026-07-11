@@ -119,6 +119,8 @@
 
 ![相破图](../../diagrams/generated/earthly-branches-po.svg)
 
+![刑害破关系总览图](../../diagrams/generated/earthly-branches-xing-hai-po.svg)
+
 ![地支关系总览图](../../diagrams/generated/earthly-branches-all-relations.svg)
 
 ## 地支六合表

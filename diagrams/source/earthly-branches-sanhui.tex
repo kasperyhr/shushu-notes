@@ -1,60 +1,65 @@
- % 地支三会图
- % 用途：展示四个三会局，连续三个地支成一方之气
- \documentclass[tikz,border=10pt]{standalone}
- \usepackage{ctex}
+% \u5730\u652f\u4e09\u4f1a\u56fe
+% \u7528\u9014\uff1a\u5c55\u793a\u56db\u4e2a\u4e09\u4f1a\u5c40\uff0c\u8fde\u7eed\u4e09\u4e2a\u5730\u652f\u6210\u4e00\u65b9\u4e4b\u6c14
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{ctex}
 \usepackage{xcolor}
 \pagecolor{white}
- \usetikzlibrary{arrows.meta, positioning, calc, backgrounds}
- 
- \begin{document}
- \begin{tikzpicture}[scale=1.2]
-   \coordinate (zi)  at ( 90:3.5);
-   \coordinate (chou) at ( 60:3.5);
-   \coordinate (yin)  at ( 30:3.5);
-   \coordinate (mao)  at (  0:3.5);
-   \coordinate (chen) at (330:3.5);
-   \coordinate (si)   at (300:3.5);
-   \coordinate (wu)   at (270:3.5);
-   \coordinate (wei)  at (240:3.5);
-   \coordinate (shen) at (210:3.5);
-   \coordinate (you)  at (180:3.5);
-   \coordinate (xu)   at (150:3.5);
-   \coordinate (hai)  at (120:3.5);
- 
-   % 三会扇形背景
-   \begin{scope}[on background layer]
-     \fill[green!15]  (30:3.8) arc(30:150:3.8) -- (0,0) -- cycle;
-     \fill[red!15]    (330:3.8) arc(330:30:3.8) -- (0,0) -- cycle;
-     \fill[orange!15] (210:3.8) arc(210:330:3.8) -- (0,0) -- cycle;
-     \fill[blue!15]   (150:3.8) arc(150:210:3.8) -- (0,0) -- cycle;
-   \end{scope}
- 
-   \draw[thick, gray!60] (0,0) circle (3.5);
- 
-   \foreach \name/\angle/\text in {
-     zi/90/子, chou/60/丑, yin/30/寅, mao/0/卯,
-     chen/330/辰, si/300/巳, wu/270/午, wei/240/未,
-     shen/210/申, you/180/酉, xu/150/戌, hai/120/亥
-   } {
-     \fill[black] (\angle:3.5) circle (2pt);
-     \node[font=\large] at (\angle:4.2) {\text};
-   }
- 
-   % 三会局标签
-   \node[font=\small\bfseries, green!60!black]  at ( 90:2.0) {东方木};
-   \node[font=\small\bfseries, green!60!black]  at ( 90:1.4) {寅卯辰};
-   \node[font=\small\bfseries, red!60!black]    at (  0:2.0) {南方火};
-   \node[font=\small\bfseries, red!60!black]    at (  0:1.4) {巳午未};
-   \node[font=\small\bfseries, orange!60!black] at (270:2.0) {西方金};
-   \node[font=\small\bfseries, orange!60!black] at (270:1.4) {申酉戌};
-   \node[font=\small\bfseries, blue!60!black]   at (180:2.0) {北方水};
-   \node[font=\small\bfseries, blue!60!black]   at (180:1.4) {亥子丑};
- 
-   % 图例
-   \node[font=\footnotesize, anchor=west] at (-5.5,-4.5) {三会：三个连续地支连成一方之气};
-  % ??????? GitHub dark mode ??? SVG ???
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing, backgrounds}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.3]
+  \coordinate (zi)  at ( 90:3.8);
+  \coordinate (chou) at ( 60:3.8);
+  \coordinate (yin)  at ( 30:3.8);
+  \coordinate (mao)  at (  0:3.8);
+  \coordinate (chen) at (330:3.8);
+  \coordinate (si)   at (300:3.8);
+  \coordinate (wu)   at (270:3.8);
+  \coordinate (wei)  at (240:3.8);
+  \coordinate (shen) at (210:3.8);
+  \coordinate (you)  at (180:3.8);
+  \coordinate (xu)   at (150:3.8);
+  \coordinate (hai)  at (120:3.8);
+
+  % \u4e09\u4f1a\u6247\u5f62\u80cc\u666f
+  \begin{scope}[on background layer]
+    \fill[green!15]  (30:4.1) arc(30:150:4.1) -- (0,0) -- cycle;
+    \fill[red!15]    (330:4.1) arc(330:30:4.1) -- (0,0) -- cycle;
+    \fill[orange!15] (210:4.1) arc(210:330:4.1) -- (0,0) -- cycle;
+    \fill[blue!15]   (150:4.1) arc(150:210:4.1) -- (0,0) -- cycle;
+  \end{scope}
+
+  \draw[thick, gray!60] (0,0) circle (3.8);
+
+  \foreach \name/\angle/\text in {
+    zi/90/\u5b50, chou/60/\u4e11, yin/30/\u5bc5, mao/0/\u536f,
+    chen/330/\u8fb0, si/300/\u5df3, wu/270/\u5348, wei/240/\u672a,
+    shen/210/\u7533, you/180/\u9149, xu/150/\u620c, hai/120/\u4ea5
+  } {
+    \fill[black] (\angle:3.8) circle (2pt);
+    \node[font=\Large\bfseries] at (\angle:4.6) {\text};
+  }
+
+  % \u4e09\u4f1a\u5c40\u6807\u7b7e\uff0c\u5206\u522b\u653e\u5728\u56db\u4e2a\u65b9\u5411\u533a\u57df
+  % \u5317\u65b9\u6c34\uff1a\u4e0a\u65b9
+  \node[font=\normalsize\bfseries, blue!60!black] at (90:2.5) {\u5317\u65b9\u6c34};
+  \node[font=\normalsize\bfseries, blue!60!black] at (90:1.8) {\u4ea5\u5b50\u4e11};
+  % \u4e1c\u65b9\u6728\uff1a\u53f3\u4fa7
+  \node[font=\normalsize\bfseries, green!60!black] at (0:2.5) {\u4e1c\u65b9\u6728};
+  \node[font=\normalsize\bfseries, green!60!black] at (0:1.8) {\u5bc5\u536f\u8fb0};
+  % \u5357\u65b9\u706b\uff1a\u4e0b\u65b9
+  \node[font=\normalsize\bfseries, red!60!black] at (270:2.5) {\u5357\u65b9\u706b};
+  \node[font=\normalsize\bfseries, red!60!black] at (270:1.8) {\u5df3\u5348\u672a};
+  % \u897f\u65b9\u91d1\uff1a\u5de6\u4fa7
+  \node[font=\normalsize\bfseries, orange!60!black] at (180:2.5) {\u897f\u65b9\u91d1};
+  \node[font=\normalsize\bfseries, orange!60!black] at (180:1.8) {\u7533\u9149\u620c};
+
+  % \u56fe\u4f8b
+  \node[font=\small, anchor=west] at (-5.8,-5.2) {\u4e09\u4f1a\uff1a\u4e09\u4e2a\u8fde\u7eed\u5730\u652f\u8fde\u6210\u4e00\u65b9\u4e4b\u6c14};
+
+  % \u767d\u8272\u80cc\u666f\uff0c\u9632\u6b62 GitHub dark mode \u4e0b\u900f\u660e SVG \u770b\u4e0d\u6e05
   \begin{scope}[on background layer]
     \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
   \end{scope}
- \end{tikzpicture}
- \end{document}
+\end{tikzpicture}
+\end{document}
