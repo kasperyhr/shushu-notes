@@ -18,32 +18,56 @@ for texfile in "${texfiles[@]}"; do
   basename=$(basename "$texfile" .tex)
   pdf="diagrams/generated/${basename}.pdf"
   svg="diagrams/generated/${basename}.svg"
+  stdout="diagrams/generated/${basename}.stdout"
+  log="diagrams/generated/${basename}.log"
 
   echo "::group::Compiling ${texfile}"
-  if ! xelatex -interaction=nonstopmode -halt-on-error -file-line-error -output-directory=diagrams/generated "$texfile"; then
+  echo "Compiling ${texfile}..."
+
+  if ! xelatex -interaction=nonstopmode -halt-on-error -file-line-error -output-directory=diagrams/generated "$texfile" > "$stdout" 2>&1; then
     echo "::error file=${texfile}::XeLaTeX failed while compiling ${texfile}"
-    log="diagrams/generated/${basename}.log"
+    echo "===== XeLaTeX stdout for ${texfile} ====="
+    tail -n 160 "$stdout" || true
+    echo "===== Last 160 lines of ${log} ====="
     if [ -f "$log" ]; then
-      echo "===== Last 120 lines of ${log} ====="
-      tail -n 120 "$log"
-      echo "===== End of ${log} ====="
+      tail -n 160 "$log" || true
     else
-      echo "No log file found for ${basename}"
+      echo "No log file found: $log"
     fi
     echo "::endgroup::"
     exit 1
   fi
-  echo "::endgroup::"
+
+  echo "XeLaTeX succeeded for ${texfile}"
 
   if [ ! -f "$pdf" ]; then
-    echo "Expected PDF not found: $pdf"
+    echo "::error file=${texfile}::Expected PDF not found: $pdf"
+    echo "===== XeLaTeX stdout for ${texfile} ====="
+    tail -n 160 "$stdout" || true
+    echo "::endgroup::"
     exit 1
   fi
 
   echo "Converting ${pdf} -> ${svg}..."
-  pdf2svg "$pdf" "$svg"
+  if ! pdf2svg "$pdf" "$svg"; then
+    echo "::error file=${texfile}::pdf2svg failed for ${pdf}"
+    ls -lah diagrams/generated || true
+    echo "::endgroup::"
+    exit 1
+  fi
+
+  if [ ! -f "$svg" ]; then
+    echo "::error file=${texfile}::Expected SVG not found: $svg"
+    ls -lah diagrams/generated || true
+    echo "::endgroup::"
+    exit 1
+  fi
+
+  echo "Generated ${svg}"
+  echo "::endgroup::"
 done
 
-rm -f diagrams/generated/*.aux diagrams/generated/*.pdf
+rm -f diagrams/generated/*.aux
 
-echo "Done. SVGs in diagrams/generated/"
+echo "Generated files:"
+find diagrams/generated -maxdepth 1 -type f -print | sort

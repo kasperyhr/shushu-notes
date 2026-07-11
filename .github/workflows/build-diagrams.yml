@@ -36,6 +36,16 @@ jobs:
         run: |
           bash scripts/build-diagrams.sh
 
+      - name: Upload diagram build logs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagram-build-debug
+          path: |
+            diagrams/generated/*.log
+            diagrams/generated/*.stdout
+            diagrams/generated/*.pdf
+
       - name: Commit generated diagrams
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
