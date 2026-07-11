@@ -6,9 +6,6 @@
 
 \begin{document}
 \begin{tikzpicture}[scale=1.5]
-  % Outer reference circle
-  \draw[gray!40, thin] (0,0) circle (3.0);
-
   % Five-element nodes evenly on circle
   \coordinate (mu)   at ( 90:3.0);
   \coordinate (huo)  at ( 18:3.0);
@@ -16,28 +13,33 @@
   \coordinate (jin)  at (234:3.0);
   \coordinate (shui) at (162:3.0);
 
-  % 相生: outer arc arrows (clockwise)
-  \draw[green!50!black, ultra thick, ->, >=Stealth, line width=2pt]
-    (mu)   to[bend left=50] node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {生} (huo);
-  \draw[green!50!black, ultra thick, ->, >=Stealth, line width=2pt]
-    (huo)  to[bend left=30] node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {生} (tu);
-  \draw[green!50!black, ultra thick, ->, >=Stealth, line width=2pt]
-    (tu)   to[bend left=30] node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {生} (jin);
-  \draw[green!50!black, ultra thick, ->, >=Stealth, line width=2pt]
-    (jin)  to[bend left=30] node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {生} (shui);
-  \draw[green!50!black, ultra thick, ->, >=Stealth, line width=2pt]
-    (shui) to[bend left=30] node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {生} (mu);
+  % 相生: outer circular arcs (clockwise, 72° each)
+  \draw[green!50!black, line width=2.2pt, ->, >=Stealth]
+    (mu)   arc[start angle=90,  delta angle=-72, radius=3.0]
+    node[font=\normalsize\bfseries, pos=0.5, fill=white, inner sep=2pt] {生};
+  \draw[green!50!black, line width=2.2pt, ->, >=Stealth]
+    (huo)  arc[start angle=18,  delta angle=-72, radius=3.0]
+    node[font=\normalsize\bfseries, pos=0.5, fill=white, inner sep=2pt] {生};
+  \draw[green!50!black, line width=2.2pt, ->, >=Stealth]
+    (tu)   arc[start angle=306, delta angle=-72, radius=3.0]
+    node[font=\normalsize\bfseries, pos=0.5, fill=white, inner sep=2pt] {生};
+  \draw[green!50!black, line width=2.2pt, ->, >=Stealth]
+    (jin)  arc[start angle=234, delta angle=-72, radius=3.0]
+    node[font=\normalsize\bfseries, pos=0.5, fill=white, inner sep=2pt] {生};
+  \draw[green!50!black, line width=2.2pt, ->, >=Stealth]
+    (shui) arc[start angle=162, delta angle=-72, radius=3.0]
+    node[font=\normalsize\bfseries, pos=0.5, fill=white, inner sep=2pt] {生};
 
-  % 相克: internal star arrows
-  \draw[red!70!black, ultra thick, ->, >=Stealth, line width=2pt]
+  % 相克: internal star lines
+  \draw[red!70!black, line width=2pt, ->, >=Stealth]
     (mu)   -- node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {克} (tu);
-  \draw[red!70!black, ultra thick, ->, >=Stealth, line width=2pt]
+  \draw[red!70!black, line width=2pt, ->, >=Stealth]
     (tu)   -- node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {克} (shui);
-  \draw[red!70!black, ultra thick, ->, >=Stealth, line width=2pt]
+  \draw[red!70!black, line width=2pt, ->, >=Stealth]
     (shui) -- node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {克} (huo);
-  \draw[red!70!black, ultra thick, ->, >=Stealth, line width=2pt]
+  \draw[red!70!black, line width=2pt, ->, >=Stealth]
     (huo)  -- node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {克} (jin);
-  \draw[red!70!black, ultra thick, ->, >=Stealth, line width=2pt]
+  \draw[red!70!black, line width=2pt, ->, >=Stealth]
     (jin)  -- node[font=\normalsize\bfseries, midway, fill=white, inner sep=2pt] {克} (mu);
 
   % Nodes
@@ -52,13 +54,12 @@
   \fill[blue!60!black] (shui) circle (15pt);
   \node[font=\Large\bfseries, white] at (shui) {水};
 
-  % Legend footnotes
+  % Legend
   \node[font=\small, green!50!black, anchor=west] at (-4.5,-4.0) {外圈 \textbf{相生}：木 \textrightarrow 火 \textrightarrow 土 \textrightarrow 金 \textrightarrow 水 \textrightarrow 木};
   \node[font=\small, green!50!black, anchor=west] at (-4.5,-4.4) {提供条件、滋养、增强};
   \node[font=\small, red!70!black, anchor=west]  at (-4.5,-5.0) {内部 \textbf{相克}：木 \textrightarrow 土 \textrightarrow 水 \textrightarrow 火 \textrightarrow 金 \textrightarrow 木};
   \node[font=\small, red!70!black, anchor=west]  at (-4.5,-5.4) {约束、控制、制衡};
 
-  % white bg
   \begin{scope}[on background layer]
     \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
   \end{scope}
