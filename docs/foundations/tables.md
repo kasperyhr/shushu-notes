@@ -1,4 +1,4 @@
-﻿# 速查表
+# 速查表
 所有核心对照表汇总，适合快速查阅和记忆复习。
 
 ## 阴阳关键词
@@ -90,6 +90,36 @@
 | 地支 | 子 | 丑 | 寅 | 卯 | 辰 | 巳 | 午 | 未 | 申 | 酉 | 戌 | 亥 |
 |------|----|----|----|----|----|----|----|----|----|----|----|----|
 | 生肖 | 鼠 | 牛 | 虎 | 兔 | 龙 | 蛇 | 马 | 羊 | 猴 | 鸡 | 狗 | 猪 |
+
+## 关系图速览
+
+### 五行关系图
+
+![五行关系图](../../diagrams/generated/five-elements-relations.svg)
+
+### 阴阳四象图
+
+![阴阳四象图](../../diagrams/generated/yin-yang-four-images.svg)
+
+### 地支关系图
+
+![十二地支圆环](../../diagrams/generated/earthly-branches-base-circle.svg)
+
+![六合图](../../diagrams/generated/earthly-branches-liuhe.svg)
+
+![六冲图](../../diagrams/generated/earthly-branches-liuchong.svg)
+
+![三合半合图](../../diagrams/generated/earthly-branches-sanhe-banhe.svg)
+
+![三会图](../../diagrams/generated/earthly-branches-sanhui.svg)
+
+![相刑图](../../diagrams/generated/earthly-branches-xing.svg)
+
+![相害图](../../diagrams/generated/earthly-branches-hai.svg)
+
+![相破图](../../diagrams/generated/earthly-branches-po.svg)
+
+![地支关系总览图](../../diagrams/generated/earthly-branches-all-relations.svg)
 
 ## 地支六合表
 

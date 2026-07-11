@@ -1,0 +1,68 @@
+ % 阴阳四象图
+ % 用途：展示阴阳到四象的演化：阴爻、阳爻 → 少阳、老阳、少阴、老阴，搭配一天和四季
+ \documentclass[tikz,border=10pt]{standalone}
+ \usepackage{ctex}
+ \usetikzlibrary{arrows.meta, positioning, calc, backgrounds}
+ 
+ \begin{document}
+ \begin{tikzpicture}[scale=1.0]
+   % 阴爻和阳爻符号
+   \node[font=\LARGE] at (0,5.5) {\textbf{两仪}};
+ 
+   % 阳爻 ———
+   \draw[very thick] (-1.5,4.5) -- (1.5,4.5);
+   \node[font=\large] at (0,4.1) {阳爻};
+   \node[font=\small, gray] at (0,3.7) {显现、主动、明亮};
+ 
+   % 阴爻 — —
+   \draw[very thick] (-1.5,3.0) -- (-0.2,3.0);
+   \draw[very thick] (0.2,3.0) -- (1.5,3.0);
+   \node[font=\large] at (0,2.6) {阴爻};
+   \node[font=\small, gray] at (0,2.2) {隐藏、安静、幽暗};
+ 
+   % 分割线
+   \draw[dashed, gray!50] (-3,2.0) -- (3,2.0);
+ 
+   \node[font=\LARGE] at (0,3.8) {};
+ 
+   % 四象
+   \node[font=\LARGE] at (0,1.8) {\textbf{四象}};
+ 
+   % 少阳
+   \node[font=\large\bfseries, orange!70!black] at (-4.5,0.8)  {少阳};
+   \draw[very thick] (-5.9,0.2) -- (-4.3,0.2);
+   \draw[very thick] (-5.9,-0.3) -- (-4.8,-0.3);
+   \draw[very thick] (-4.4,-0.3) -- (-4.3,-0.3);
+   \node[font=\small] at (-5.1,1.5) {阳刚开始生};
+   \node[font=\small, gray] at (-5.1,1.1) {清晨·春·阴消阳长};
+ 
+   % 老阳
+   \node[font=\large\bfseries, red!70!black]   at (-1.5,0.8)  {老阳};
+   \draw[very thick] (-2.9,0.2) -- (-1.3,0.2);
+   \draw[very thick] (-2.9,-0.3) -- (-1.3,-0.3);
+   \node[font=\small] at (-2.1,1.5) {阳达到极盛};
+   \node[font=\small, gray] at (-2.1,1.1) {正午·夏·阳极生阴};
+ 
+   % 少阴
+   \node[font=\large\bfseries, blue!60!black]  at (1.5,0.8)   {少阴};
+   \draw[very thick] (0.1,0.2) -- (1.8,0.2);
+   \draw[very thick] (0.9,0.2) -- (0.9,-0.3);
+   \draw[very thick] (0.1,-0.3) -- (0.5,-0.3);
+   \draw[very thick] (1.3,-0.3) -- (1.8,-0.3);
+   \node[font=\small] at (0.9,1.5) {阴刚开始生};
+   \node[font=\small, gray] at (0.9,1.1) {傍晚·秋·阳消阴长};
+ 
+   % 老阴
+   \node[font=\large\bfseries, purple!70!black] at (4.5,0.8)   {老阴};
+   \draw[very thick] (3.1,-0.3) -- (3.9,-0.3);
+   \draw[very thick] (4.3,-0.3) -- (5.1,-0.3);
+   \draw[very thick] (3.1,0.2) -- (3.9,0.2);
+   \draw[very thick] (4.3,0.2) -- (5.1,0.2);
+   \node[font=\small] at (4.1,1.5) {阴达到极盛};
+   \node[font=\small, gray] at (4.1,1.1) {午夜·冬·阴极生阳};
+ 
+   % 底部：动态循环箭头
+   \node[font=\footnotesize, gray] at (0,-1.2) {少阳 → 老阳 → 少阴 → 老阴 → 少阳 …};
+   \node[font=\footnotesize, gray] at (0,-1.6) {阴阳消长，循环不息};
+ \end{tikzpicture}
+ \end{document}

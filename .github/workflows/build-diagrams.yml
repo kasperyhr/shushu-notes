@@ -1,0 +1,49 @@
+ name: Build Diagrams
+ 
+ on:
+   push:
+     paths:
+       - 'diagrams/source/**'
+       - 'scripts/build-diagrams.sh'
+       - '.github/workflows/build-diagrams.yml'
+   workflow_dispatch:
+ 
+ permissions:
+   contents: write
+ 
+ jobs:
+   build:
+     runs-on: ubuntu-latest
+ 
+     steps:
+       - name: Checkout repository
+         uses: actions/checkout@v4
+ 
+       - name: Install TeX Live and pdf2svg
+         run: |
+           sudo apt-get update
+           sudo apt-get install -y \
+             texlive-xetex \
+             texlive-latex-recommended \
+             texlive-latex-extra \
+             texlive-lang-chinese \
+             texlive-fonts-recommended \
+             pdf2svg
+ 
+       - name: Build diagrams
+         run: |
+           mkdir -p diagrams/generated
+           for texfile in diagrams/source/*.tex; do
+             basename=$(basename "$texfile" .tex)
+             echo "Compiling $basename..."
+             xelatex -interaction=nonstopmode -output-directory=diagrams/generated "$texfile"
+             pdf2svg "diagrams/generated/${basename}.pdf" "diagrams/generated/${basename}.svg"
+           done
+           # Clean up auxiliary files
+           rm -f diagrams/generated/*.aux diagrams/generated/*.log diagrams/generated/*.pdf
+ 
+       - name: Commit generated diagrams
+         uses: stefanzweifel/git-auto-commit-action@v5
+         with:
+           commit_message: Update generated diagrams
+           file_pattern: 'diagrams/generated/*.svg'

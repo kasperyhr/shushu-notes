@@ -1,0 +1,54 @@
+ % 地支三会图
+ % 用途：展示四个三会局，连续三个地支成一方之气
+ \documentclass[tikz,border=10pt]{standalone}
+ \usepackage{ctex}
+ \usetikzlibrary{arrows.meta, positioning, calc, backgrounds}
+ 
+ \begin{document}
+ \begin{tikzpicture}[scale=1.2]
+   \coordinate (zi)  at ( 90:3.5);
+   \coordinate (chou) at ( 60:3.5);
+   \coordinate (yin)  at ( 30:3.5);
+   \coordinate (mao)  at (  0:3.5);
+   \coordinate (chen) at (330:3.5);
+   \coordinate (si)   at (300:3.5);
+   \coordinate (wu)   at (270:3.5);
+   \coordinate (wei)  at (240:3.5);
+   \coordinate (shen) at (210:3.5);
+   \coordinate (you)  at (180:3.5);
+   \coordinate (xu)   at (150:3.5);
+   \coordinate (hai)  at (120:3.5);
+ 
+   % 三会扇形背景
+   \begin{scope}[on background layer]
+     \fill[green!15]  (30:3.8) arc(30:150:3.8) -- (0,0) -- cycle;
+     \fill[red!15]    (330:3.8) arc(330:30:3.8) -- (0,0) -- cycle;
+     \fill[orange!15] (210:3.8) arc(210:330:3.8) -- (0,0) -- cycle;
+     \fill[blue!15]   (150:3.8) arc(150:210:3.8) -- (0,0) -- cycle;
+   \end{scope}
+ 
+   \draw[thick, gray!60] (0,0) circle (3.5);
+ 
+   \foreach \name/\angle/\text in {
+     zi/90/子, chou/60/丑, yin/30/寅, mao/0/卯,
+     chen/330/辰, si/300/巳, wu/270/午, wei/240/未,
+     shen/210/申, you/180/酉, xu/150/戌, hai/120/亥
+   } {
+     \fill[black] (\angle:3.5) circle (2pt);
+     \node[font=\large] at (\angle:4.2) {\text};
+   }
+ 
+   % 三会局标签
+   \node[font=\small\bfseries, green!60!black]  at ( 90:2.0) {东方木};
+   \node[font=\small\bfseries, green!60!black]  at ( 90:1.4) {寅卯辰};
+   \node[font=\small\bfseries, red!60!black]    at (  0:2.0) {南方火};
+   \node[font=\small\bfseries, red!60!black]    at (  0:1.4) {巳午未};
+   \node[font=\small\bfseries, orange!60!black] at (270:2.0) {西方金};
+   \node[font=\small\bfseries, orange!60!black] at (270:1.4) {申酉戌};
+   \node[font=\small\bfseries, blue!60!black]   at (180:2.0) {北方水};
+   \node[font=\small\bfseries, blue!60!black]   at (180:1.4) {亥子丑};
+ 
+   % 图例
+   \node[font=\footnotesize, anchor=west] at (-5.5,-4.5) {三会：三个连续地支连成一方之气};
+ \end{tikzpicture}
+ \end{document}

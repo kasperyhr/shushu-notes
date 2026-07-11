@@ -1,0 +1,76 @@
+ % 地支三合半合图
+ % 用途：展示四个三合局和对应的半合关系
+ \documentclass[tikz,border=10pt]{standalone}
+ \usepackage{ctex}
+ \usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing}
+ 
+ \begin{document}
+ \begin{tikzpicture}[scale=1.2]
+   \coordinate (zi)  at ( 90:3.5);
+   \coordinate (chou) at ( 60:3.5);
+   \coordinate (yin)  at ( 30:3.5);
+   \coordinate (mao)  at (  0:3.5);
+   \coordinate (chen) at (330:3.5);
+   \coordinate (si)   at (300:3.5);
+   \coordinate (wu)   at (270:3.5);
+   \coordinate (wei)  at (240:3.5);
+   \coordinate (shen) at (210:3.5);
+   \coordinate (you)  at (180:3.5);
+   \coordinate (xu)   at (150:3.5);
+   \coordinate (hai)  at (120:3.5);
+ 
+   \draw[thick, gray!60] (0,0) circle (3.5);
+ 
+   \foreach \name/\angle/\text in {
+     zi/90/子, chou/60/丑, yin/30/寅, mao/0/卯,
+     chen/330/辰, si/300/巳, wu/270/午, wei/240/未,
+     shen/210/申, you/180/酉, xu/150/戌, hai/120/亥
+   } {
+     \fill[black] (\angle:3.5) circle (2pt);
+     \node[font=\large] at (\angle:4.2) {\text};
+   }
+ 
+   % 标记核心地支（子卯午酉）加外圈
+   \draw[orange!80!black, thick] (90:3.5)  circle (10pt);  % 子
+   \draw[teal!80!black,  thick] (0:3.5)   circle (10pt);  % 卯
+   \draw[red!80!black,   thick] (270:3.5) circle (10pt);  % 午
+   \draw[gray!80!black, thick] (180:3.5) circle (10pt);  % 酉
+ 
+   \node[font=\footnotesize, orange!80!black] at ( 90:3.5) {子};
+   \node[font=\footnotesize, teal!80!black]  at (  0:3.5) {卯};
+   \node[font=\footnotesize, red!80!black]   at (270:3.5) {午};
+   \node[font=\footnotesize, gray!80!black]  at (180:3.5) {酉};
+ 
+   % 三合局：申子辰合水（橙色三角形实线）
+   \draw[orange!70!black, thick] (shen) -- (zi) -- (chen) -- cycle;
+   % 亥卯未合木（青色三角形实线）
+   \draw[teal!70!black, thick] (hai) -- (mao) -- (wei) -- cycle;
+   % 寅午戌合火（红色三角形实线）
+   \draw[red!70!black, thick] (yin) -- (wu) -- (xu) -- cycle;
+   % 巳酉丑合金（灰色三角形实线）
+   \draw[gray!60!black, thick] (si) -- (you) -- (chou) -- cycle;
+ 
+   % 半合：虚线连接核心地支与两边
+   \draw[orange!70!black, dashed, thin] (zi) -- (shen);
+   \draw[orange!70!black, dashed, thin] (zi) -- (chen);
+   \draw[teal!70!black, dashed, thin] (mao) -- (hai);
+   \draw[teal!70!black, dashed, thin] (mao) -- (wei);
+   \draw[red!70!black, dashed, thin] (wu) -- (yin);
+   \draw[red!70!black, dashed, thin] (wu) -- (xu);
+   \draw[gray!60!black, dashed, thin] (you) -- (si);
+   \draw[gray!60!black, dashed, thin] (you) -- (chou);
+ 
+   % 图例
+   \node[font=\footnotesize, anchor=west] at (-5.5,-4.8) {\textbf{三合局}（实线三角）：};
+   \draw[orange!70!black, thick] (-4.2,-4.8) -- (-3.7,-4.8);
+   \node[font=\footnotesize, orange!70!black, anchor=west] at (-3.6,-4.8) {申子辰水};
+   \draw[teal!70!black, thick] (-2.4,-4.8) -- (-1.9,-4.8);
+   \node[font=\footnotesize, teal!70!black, anchor=west] at (-1.8,-4.8) {亥卯未木};
+   \draw[red!70!black, thick] (-0.6,-4.8) -- (-0.1,-4.8);
+   \node[font=\footnotesize, red!70!black, anchor=west] at (0,-4.8) {寅午戌火};
+   \draw[gray!60!black, thick] (1.2,-4.8) -- (1.7,-4.8);
+   \node[font=\footnotesize, gray!60!black, anchor=west] at (1.8,-4.8) {巳酉丑金};
+ 
+   \node[font=\footnotesize, anchor=west] at (-5.5,-5.5) {\textbf{半合}（虚线）：聚合倾向，不等于完整成局};
+ \end{tikzpicture}
+ \end{document}

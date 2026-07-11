@@ -1,0 +1,45 @@
+ % 地支相害图
+ % 用途：展示六对地支相害关系，代表暗伤、隔阂、隐性损耗
+ \documentclass[tikz,border=10pt]{standalone}
+ \usepackage{ctex}
+ \usetikzlibrary{arrows.meta, positioning, calc}
+ 
+ \begin{document}
+ \begin{tikzpicture}[scale=1.2]
+   \coordinate (zi)  at ( 90:3.5);
+   \coordinate (chou) at ( 60:3.5);
+   \coordinate (yin)  at ( 30:3.5);
+   \coordinate (mao)  at (  0:3.5);
+   \coordinate (chen) at (330:3.5);
+   \coordinate (si)   at (300:3.5);
+   \coordinate (wu)   at (270:3.5);
+   \coordinate (wei)  at (240:3.5);
+   \coordinate (shen) at (210:3.5);
+   \coordinate (you)  at (180:3.5);
+   \coordinate (xu)   at (150:3.5);
+   \coordinate (hai)  at (120:3.5);
+ 
+   \draw[thick, gray!60] (0,0) circle (3.5);
+ 
+   \foreach \name/\angle/\text in {
+     zi/90/子, chou/60/丑, yin/30/寅, mao/0/卯,
+     chen/330/辰, si/300/巳, wu/270/午, wei/240/未,
+     shen/210/申, you/180/酉, xu/150/戌, hai/120/亥
+   } {
+     \fill[black] (\angle:3.5) circle (2pt);
+     \node[font=\large] at (\angle:4.2) {\text};
+   }
+ 
+   % 六害：点划线
+   \draw[purple!70!black, thick, dash dot] (zi)   -- (wei);
+   \draw[purple!70!black, thick, dash dot] (chou) -- (wu);
+   \draw[purple!70!black, thick, dash dot] (yin)  -- (si);
+   \draw[purple!70!black, thick, dash dot] (mao)  -- (chen);
+   \draw[purple!70!black, thick, dash dot] (shen) -- (hai);
+   \draw[purple!70!black, thick, dash dot] (you)  -- (xu);
+ 
+   % 图例
+   \node[font=\footnotesize, purple!70!black, anchor=west] at (-5.5,-4.5) {六害：暗伤、隔阂、隐性损耗};
+   \draw[purple!70!black, thick, dash dot] (-5.5,-4.2) -- (-4.8,-4.2);
+ \end{tikzpicture}
+ \end{document}

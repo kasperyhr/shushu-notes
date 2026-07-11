@@ -1,0 +1,46 @@
+ % 地支六合图
+ % 用途：展示六对地支两两相合的关系，代表结合、牵连、绑定
+ \documentclass[tikz,border=10pt]{standalone}
+ \usepackage{ctex}
+ \usetikzlibrary{arrows.meta, positioning, calc}
+ 
+ \begin{document}
+ \begin{tikzpicture}[scale=1.2]
+   % 地支坐标
+   \coordinate (zi)  at ( 90:3.5);
+   \coordinate (chou) at ( 60:3.5);
+   \coordinate (yin)  at ( 30:3.5);
+   \coordinate (mao)  at (  0:3.5);
+   \coordinate (chen) at (330:3.5);
+   \coordinate (si)   at (300:3.5);
+   \coordinate (wu)   at (270:3.5);
+   \coordinate (wei)  at (240:3.5);
+   \coordinate (shen) at (210:3.5);
+   \coordinate (you)  at (180:3.5);
+   \coordinate (xu)   at (150:3.5);
+   \coordinate (hai)  at (120:3.5);
+ 
+   \draw[thick, gray!60] (0,0) circle (3.5);
+ 
+   \foreach \name/\angle/\text in {
+     zi/90/子, chou/60/丑, yin/30/寅, mao/0/卯,
+     chen/330/辰, si/300/巳, wu/270/午, wei/240/未,
+     shen/210/申, you/180/酉, xu/150/戌, hai/120/亥
+   } {
+     \fill[black] (\angle:3.5) circle (2pt);
+     \node[font=\large] at (\angle:4.2) {\text};
+   }
+ 
+   % 六合连接线
+   \draw[red!70!black, very thick] (zi)  to[bend left=15]  (chou);
+   \draw[red!70!black, very thick] (yin) to[bend left=15]  (hai);
+   \draw[red!70!black, very thick] (mao) to[bend left=15]  (xu);
+   \draw[red!70!black, very thick] (chen) to[bend left=15] (you);
+   \draw[red!70!black, very thick] (si)   to[bend left=15]  (shen);
+   \draw[red!70!black, very thick] (wu)   to[bend left=15]  (wei);
+ 
+   % 图例
+   \node[font=\footnotesize, red!70!black, anchor=west] at (-5.5,-4.5) {六合：结合、牵连、绑定};
+   \draw[red!70!black, very thick] (-5.5,-4.2) -- (-4.8,-4.2);
+ \end{tikzpicture}
+ \end{document}

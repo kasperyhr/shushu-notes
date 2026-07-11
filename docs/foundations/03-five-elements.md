@@ -42,6 +42,14 @@
 | 金 | 整理 |
 | 水 | 沉淀 |
 
+![五行生克关系图](../../diagrams/generated/five-elements-relations)
+
+> 上图展示五行（木火土金水）之间的相生（外圈）和相克（内部星形）关系。
+
+![五行生克关系图](../../diagrams/generated/five-elements-relations.svg)
+
+> 上图展示五行（木火土金水）之间的相生（外圈）和相克（内部星形）关系。
+
 ## 对应关系
 
 | 五行 | 方向 | 季节 | 动作 | 颜色 |

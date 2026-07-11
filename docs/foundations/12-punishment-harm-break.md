@@ -46,6 +46,14 @@
 
 以上解释属于象意理解和辅助记忆，不是绝对断语。
 
+![地支相刑图](../../diagrams/generated/earthly-branches-xing)
+
+> 上图展示寅巳申三刑、丑未戌三刑、子卯相刑、辰午酉亥自刑四种关系。
+
+![地支相刑图](../../diagrams/generated/earthly-branches-xing.svg)
+
+> 上图展示寅巳申三刑、丑未戌三刑、子卯相刑、辰午酉亥自刑四种关系。
+
 ## 地支相害
 
 害的关键词：**暗伤、隔阂、误解、彼此损耗、隐性冲突**。表面不一定正面对撞，但会造成不舒适影响。
@@ -68,6 +76,14 @@
 | 卯辰害 | 不协调、关系不顺 |
 | 申亥害 | 潜在牵制 |
 | 酉戌害 | 隐性损耗 |
+
+![地支相害图](../../diagrams/generated/earthly-branches-hai)
+
+> 上图展示六对地支相害关系，紫色点划线连接。
+
+![地支相害图](../../diagrams/generated/earthly-branches-hai.svg)
+
+> 上图展示六对地支相害关系，紫色点划线连接。
 
 ## 地支相破
 
@@ -92,6 +108,14 @@
 | 卯午破 | 节奏受损 |
 | 申巳破 | 组合破裂 |
 | 戌未破 | 土性结构破坏 |
+
+![地支相破图](../../diagrams/generated/earthly-branches-po)
+
+> 上图展示六对地支相破关系，绿色密集点线连接。
+
+![地支相破图](../../diagrams/generated/earthly-branches-po.svg)
+
+> 上图展示六对地支相破关系，绿色密集点线连接。
 
 ## 现代理解
 
