@@ -19,8 +19,21 @@ for texfile in "${texfiles[@]}"; do
   pdf="diagrams/generated/${basename}.pdf"
   svg="diagrams/generated/${basename}.svg"
 
-  echo "Compiling ${texfile}..."
-  xelatex -interaction=nonstopmode -halt-on-error -file-line-error -output-directory=diagrams/generated "$texfile"
+  echo "::group::Compiling ${texfile}"
+  if ! xelatex -interaction=nonstopmode -halt-on-error -file-line-error -output-directory=diagrams/generated "$texfile"; then
+    echo "::error file=${texfile}::XeLaTeX failed while compiling ${texfile}"
+    log="diagrams/generated/${basename}.log"
+    if [ -f "$log" ]; then
+      echo "===== Last 120 lines of ${log} ====="
+      tail -n 120 "$log"
+      echo "===== End of ${log} ====="
+    else
+      echo "No log file found for ${basename}"
+    fi
+    echo "::endgroup::"
+    exit 1
+  fi
+  echo "::endgroup::"
 
   if [ ! -f "$pdf" ]; then
     echo "Expected PDF not found: $pdf"
@@ -31,6 +44,6 @@ for texfile in "${texfiles[@]}"; do
   pdf2svg "$pdf" "$svg"
 done
 
-rm -f diagrams/generated/*.aux diagrams/generated/*.log diagrams/generated/*.pdf
+rm -f diagrams/generated/*.aux diagrams/generated/*.pdf
 
 echo "Done. SVGs in diagrams/generated/"
