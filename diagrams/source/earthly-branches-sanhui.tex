@@ -29,13 +29,13 @@
 
   \draw[thick, gray!60] (0,0) circle (4.0);
 
-  \foreach \\name/\\angle/\\text in {
+  \foreach \name/\angle/\text in {
     zi/90/子, chou/60/丑, yin/30/寅, mao/0/卯,
     chen/330/辰, si/300/巳, wu/270/午, wei/240/未,
     shen/210/申, you/180/酉, xu/150/戌, hai/120/亥
   } {
-    \fill[black] (\\angle:4.0) circle (2pt);
-    \node[font=\Large\bfseries] at (\\angle:4.8) {\\text};
+    \fill[black] (\angle:4.0) circle (2pt);
+    \node[font=\Large\bfseries] at (\angle:4.8) {\text};
   }
 
   \node[font=\normalsize\bfseries, blue!60!black] at (90:2.7) {北方水};
