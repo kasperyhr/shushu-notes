@@ -1,78 +1,110 @@
 % 阴阳与四象关系图
 % 用途：展示两仪（阴阳）与四象（少阳、老阳、少阴、老阴）的阶段关系
-\documentclass[tikz,border=10pt]{standalone}
+\documentclass[tikz,border=12pt]{standalone}
 \usepackage{ctex}
 \usepackage{xcolor}
 \pagecolor{white}
 \usetikzlibrary{arrows.meta, positioning, calc, backgrounds}
 
 \begin{document}
-\begin{tikzpicture}[x=1cm,y=1cm]
+\begin{tikzpicture}[
+  box/.style={
+    draw=gray!45,
+    rounded corners=6pt,
+    fill=gray!3,
+    align=center,
+    inner xsep=10pt,
+    inner ysep=8pt,
+    minimum width=3.0cm
+  },
+  phasebox/.style={
+    draw=gray!45,
+    rounded corners=6pt,
+    fill=gray!3,
+    align=center,
+    inner xsep=8pt,
+    inner ysep=7pt,
+    minimum width=2.35cm,
+    minimum height=2.35cm
+  },
+  arrow/.style={
+    thick,
+    -{Stealth[length=3mm,width=2mm]},
+    gray!75!black
+  }
+]
 
-% ===== 标题 =====
-\node[font=\Huge\bfseries] at (0,8.6) {两仪};
+% ===== 两仪 =====
+\node[font=\Huge\bfseries] at (0,7.7) {两仪};
 
-% ===== 两仪：阳 / 阴 =====
-\node[font=\Huge\bfseries, red!60!black] at (-3.2,7.55) {阳};
-\node[font=\small, align=center] at (-3.2,6.35)
-  {\shortstack{显现\\主动\\明亮\\上升\\外放}};
+\node[box] (yang) at (-3.2,6.15) {
+  {\Huge\bfseries\color{red!65!black} 阳}\\[5pt]
+  {\small 显现}\\
+  {\small 主动}\\
+  {\small 明亮}\\
+  {\small 上升}\\
+  {\small 外放}
+};
 
-\node[font=\Huge\bfseries, blue!60!black] at (3.2,7.55) {阴};
-\node[font=\small, align=center] at (3.2,6.35)
-  {\shortstack{隐藏\\安静\\幽暗\\下降\\内敛}};
+\node[box] (yin) at (3.2,6.15) {
+  {\Huge\bfseries\color{blue!65!black} 阴}\\[5pt]
+  {\small 隐藏}\\
+  {\small 安静}\\
+  {\small 幽暗}\\
+  {\small 下降}\\
+  {\small 内敛}
+};
 
-% 分隔线
-\draw[dashed, gray!45] (-5.5,5.15) -- (5.5,5.15);
+\draw[dashed, gray!45] (-6.0,4.45) -- (6.0,4.45);
 
-% ===== 四象标题区 =====
-\node[font=\Huge\bfseries] at (0,4.65) {四象};
-\node[font=\small, gray!70!black] at (0,4.20) {阴阳消长的四个阶段};
+% ===== 四象 =====
+\node[font=\Huge\bfseries] at (0,3.95) {四象};
+\node[font=\small, gray!70!black] at (0,3.45) {阴阳消长的四个阶段};
 
-% ===== 回环箭头：少阴 -> 老阴 =====
-\draw[thick, -{Stealth[length=3mm,width=2mm]}, gray!70!black]
-  (4.55,3.85) .. controls (2.0,4.45) and (-2.0,4.45) .. (-4.55,3.85);
+% 四象卡片
+\node[phasebox] (laoyin) at (-4.8,1.85) {
+  {\Large\bfseries\color{purple!70!black} 老阴}\\[5pt]
+  {\small 阴达到极盛}\\
+  {\small 午夜}\\
+  {\small 冬}\\[4pt]
+  {\small\color{gray!70!black} 阴极生阳}
+};
 
-% ===== 四象四列 =====
-% 列中心 x: -4.5, -1.5, 1.5, 4.5
-% 行 y: 名称 2.95, 阶段说明 2.38, 时段 1.85, 季节 1.35
+\node[phasebox] (shaoyang) at (-1.6,1.85) {
+  {\Large\bfseries\color{orange!85!black} 少阳}\\[5pt]
+  {\small 阳刚开始生}\\
+  {\small 清晨}\\
+  {\small 春}\\[4pt]
+  {\small\color{gray!70!black} 阴消阳长}
+};
 
-% 老阴
-\node[font=\Large\bfseries, red!65!black] at (-4.5,2.95) {老阴};
-\node[font=\small, align=center] at (-4.5,2.38) {\shortstack{阴达到极盛}};
-\node[font=\small] at (-4.5,1.85) {午夜};
-\node[font=\small] at (-4.5,1.35) {冬};
+\node[phasebox] (laoyang) at (1.6,1.85) {
+  {\Large\bfseries\color{red!70!black} 老阳}\\[5pt]
+  {\small 阳达到极盛}\\
+  {\small 正午}\\
+  {\small 夏}\\[4pt]
+  {\small\color{gray!70!black} 阳极生阴}
+};
 
-% 少阳
-\node[font=\Large\bfseries, orange!80!black] at (-1.5,2.95) {少阳};
-\node[font=\small, align=center] at (-1.5,2.38) {\shortstack{阳刚开始生}};
-\node[font=\small] at (-1.5,1.85) {清晨};
-\node[font=\small] at (-1.5,1.35) {春};
+\node[phasebox] (shaoyin) at (4.8,1.85) {
+  {\Large\bfseries\color{blue!70!black} 少阴}\\[5pt]
+  {\small 阴刚开始生}\\
+  {\small 傍晚}\\
+  {\small 秋}\\[4pt]
+  {\small\color{gray!70!black} 阳消阴长}
+};
 
-% 老阳
-\node[font=\Large\bfseries, red!75!black] at (1.5,2.95) {老阳};
-\node[font=\small, align=center] at (1.5,2.38) {\shortstack{阳达到极盛}};
-\node[font=\small] at (1.5,1.85) {正午};
-\node[font=\small] at (1.5,1.35) {夏};
+% 顺向箭头：老阴 -> 少阳 -> 老阳 -> 少阴
+\draw[arrow] (laoyin.east) -- (shaoyang.west);
+\draw[arrow] (shaoyang.east) -- (laoyang.west);
+\draw[arrow] (laoyang.east) -- (shaoyin.west);
 
-% 少阴
-\node[font=\Large\bfseries, blue!70!black] at (4.5,2.95) {少阴};
-\node[font=\small, align=center] at (4.5,2.38) {\shortstack{阴刚开始生}};
-\node[font=\small] at (4.5,1.85) {傍晚};
-\node[font=\small] at (4.5,1.35) {秋};
+% 回环箭头：少阴 -> 老阴，走底部，不穿过卡片文字
+\draw[arrow]
+  (shaoyin.south) .. controls (2.8,-0.25) and (-2.8,-0.25) .. (laoyin.south);
 
-% ===== 顺向箭头 =====
-\draw[thick, -{Stealth[length=2.5mm,width=2mm]}] (-3.35,2.95) -- (-2.65,2.95);
-\draw[thick, -{Stealth[length=2.5mm,width=2mm]}] (-0.35,2.95) -- (0.35,2.95);
-\draw[thick, -{Stealth[length=2.5mm,width=2mm]}] (2.65,2.95) -- (3.35,2.95);
-
-% ===== 灰色变化说明 =====
-\node[font=\small, gray!70!black] at (-4.5,0.75) {阴极生阳};
-\node[font=\small, gray!70!black] at (-1.5,0.75) {阴消阳长};
-\node[font=\small, gray!70!black] at (1.5,0.75) {阳极生阴};
-\node[font=\small, gray!70!black] at (4.5,0.75) {阳消阴长};
-
-% ===== 底部循环说昮 =====
-\node[font=\small, gray!75!black] at (0,-0.15)
+% 底部说明
+\node[font=\small, gray!75!black] at (0,-0.85)
   {循环：老阴 $\rightarrow$ 少阳 $\rightarrow$ 老阳 $\rightarrow$ 少阴 $\rightarrow$ 老阴};
 
 % 白色背景
