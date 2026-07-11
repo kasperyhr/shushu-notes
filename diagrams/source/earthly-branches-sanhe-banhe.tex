@@ -22,13 +22,13 @@
 
   \draw[thick, gray!60] (0,0) circle (4.2);
 
-  \foreach \\name/\\angle/\\text in {
+  \foreach \name/\angle/\text in {
     zi/90/子, chou/60/丑, yin/30/寅, mao/0/卯,
     chen/330/辰, si/300/巳, wu/270/午, wei/240/未,
     shen/210/申, you/180/酉, xu/150/戌, hai/120/亥
   } {
-    \fill[black] (\\angle:4.2) circle (2pt);
-    \node[font=\Large\bfseries] at (\\angle:5.0) {\\text};
+    \fill[black] (\angle:4.2) circle (2pt);
+    \node[font=\Large\bfseries] at (\angle:5.0) {\text};
   }
 
   \draw[orange!90!black, ultra thick] (90:4.2)  circle (12pt);
