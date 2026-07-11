@@ -46,3 +46,4 @@
 ## 后续扩展
 
 当前只完成了基础篇。后续计划扩展到六爻、大六壬、小六壬、奇门遁甲、梅花易数和周易六十四卦。每个模块目前都有一个 README 和一个 roadmap，供后续填充。
+12. [地支刑、害、破](/docs/foundations/12-punishment-harm-break.md)

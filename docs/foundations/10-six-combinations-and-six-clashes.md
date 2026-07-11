@@ -73,3 +73,4 @@
 - [三合局与三会局](/docs/foundations/11-three-harmony-and-three-meetings.md)：三个地支的合局
 - [速查表](/docs/foundations/tables.md)：六合表、六冲表
 - [术语表](/docs/foundations/glossary.md)：六合、六冲
+- [地支刑、害、破](/docs/foundations/12-punishment-harm-break.md)：刑害破的关系

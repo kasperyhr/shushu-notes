@@ -85,3 +85,4 @@
 - [地支六合与六冲](/docs/foundations/10-six-combinations-and-six-clashes.md)：两两地支关系
 - [速查表](/docs/foundations/tables.md)：三合局表、三会局表
 - [术语表](/docs/foundations/glossary.md)：三合、三会
+- [地支刑、害、破](/docs/foundations/12-punishment-harm-break.md)：刑害破的关系
