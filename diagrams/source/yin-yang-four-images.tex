@@ -12,11 +12,11 @@
 
   % Left: 阳
   \node[font=\Huge\bfseries, red!60!black] at (-3.0,7.5) {阳};
-  \node[font=\small, align=center, text width=3cm] at (-3.0,6.4) {显现\主动\明亮\上升\外放};
+  \node[font=\small] at (-3.0,6.4) {\shortstack{显现\\主动\\明亮\\上升\\外放}};
 
   % Right: 阴
   \node[font=\Huge\bfseries, blue!60!black] at (3.0,7.5) {阴};
-  \node[font=\small, align=center, text width=3cm] at (3.0,6.4) {隐藏\安静\幽暗\下降\内敛};
+  \node[font=\small] at (3.0,6.4) {\shortstack{隐藏\\安静\\幽暗\\下降\\内敛}};
 
   % Divider
   \draw[dashed, gray!50] (-5.5,5.5) -- (5.5,5.5);
@@ -25,38 +25,30 @@
   \node[font=\LARGE\bfseries] at (0,5.0) {四象};
   \node[font=\small, gray] at (0,4.5) {阴阳消长的四个阶段};
 
-  % Four nodes in a row
-  % 老阴 (purple)  少阳 (orange)  老阳 (red)  少阴 (blue)
-
   % 老阴 at x=-4.5
   \node[font=\Large\bfseries, purple!70!black] at (-4.5,3.5) {老阴};
-  \node[font=\small, align=center] at (-4.5,2.7) {阴达到极盛\午夜\冬};
-  \node[font=\small, gray, align=center] at (-4.5,1.7) {阴极生阳};
+  \node[font=\small] at (-4.5,2.7) {\shortstack{阴达到极盛\\午夜\\冬}};
+  \node[font=\small, gray] at (-4.5,1.7) {阴极生阳};
 
   % 少阳 at x=-1.5
   \node[font=\Large\bfseries, orange!70!black] at (-1.5,3.5) {少阳};
-  \node[font=\small, align=center] at (-1.5,2.7) {阳刚开始生\清晨\春};
-  \node[font=\small, gray, align=center] at (-1.5,1.7) {阴消阳长};
+  \node[font=\small] at (-1.5,2.7) {\shortstack{阳刚开始生\\清晨\\春}};
+  \node[font=\small, gray] at (-1.5,1.7) {阴消阳长};
 
   % 老阳 at x=1.5
   \node[font=\Large\bfseries, red!70!black] at (1.5,3.5) {老阳};
-  \node[font=\small, align=center] at (1.5,2.7) {阳达到极盛\正午\夏};
-  \node[font=\small, gray, align=center] at (1.5,1.7) {阳极生阴};
+  \node[font=\small] at (1.5,2.7) {\shortstack{阳达到极盛\\正午\\夏}};
+  \node[font=\small, gray] at (1.5,1.7) {阳极生阴};
 
   % 少阴 at x=4.5
   \node[font=\Large\bfseries, blue!60!black] at (4.5,3.5) {少阴};
-  \node[font=\small, align=center] at (4.5,2.7) {阴刚开始生\傍晚\秋};
-  \node[font=\small, gray, align=center] at (4.5,1.7) {阳消阴长};
+  \node[font=\small] at (4.5,2.7) {\shortstack{阴刚开始生\\傍晚\\秋}};
+  \node[font=\small, gray] at (4.5,1.7) {阳消阴长};
 
-  % Arrows between nodes (horizontal, below names but above descriptions)
-  % 老阴 -> 少阳
+  % Arrows
   \draw[thick, ->, >=Stealth] (-3.3,3.5) -- (-2.7,3.5);
-  % 少阳 -> 老阳
   \draw[thick, ->, >=Stealth] (-0.3,3.5) -- (0.3,3.5);
-  % 老阳 -> 少阴
   \draw[thick, ->, >=Stealth] (2.7,3.5) -- (3.3,3.5);
-
-  % Cycle return arrow: 少阴 -> 老阴 (curved below)
   \draw[thick, ->, >=Stealth] (4.5,1.3) to[bend right=30] (-4.5,1.3);
   \node[font=\small, gray] at (0,0.2) {循环：老阴 \textrightarrow 少阳 \textrightarrow 老阳 \textrightarrow 少阴 \textrightarrow 老阴};
 
