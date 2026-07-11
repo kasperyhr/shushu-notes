@@ -1,5 +1,5 @@
-% \u5730\u652f\u4e09\u4f1a\u56fe
-% \u7528\u9014\uff1a\u5c55\u793a\u56db\u4e2a\u4e09\u4f1a\u5c40\uff0c\u8fde\u7eed\u4e09\u4e2a\u5730\u652f\u6210\u4e00\u65b9\u4e4b\u6c14
+% 地支三会图
+% 用途：展示四个三会局，连续三个地支成一方之气
 \documentclass[tikz,border=10pt]{standalone}
 \usepackage{ctex}
 \usepackage{xcolor}
@@ -21,7 +21,7 @@
   \coordinate (xu)   at (150:3.8);
   \coordinate (hai)  at (120:3.8);
 
-  % \u4e09\u4f1a\u6247\u5f62\u80cc\u666f
+  % 三会扇形背景
   \begin{scope}[on background layer]
     \fill[green!15]  (30:4.1) arc(30:150:4.1) -- (0,0) -- cycle;
     \fill[red!15]    (330:4.1) arc(330:30:4.1) -- (0,0) -- cycle;
@@ -32,32 +32,32 @@
   \draw[thick, gray!60] (0,0) circle (3.8);
 
   \foreach \name/\angle/\text in {
-    zi/90/\u5b50, chou/60/\u4e11, yin/30/\u5bc5, mao/0/\u536f,
-    chen/330/\u8fb0, si/300/\u5df3, wu/270/\u5348, wei/240/\u672a,
-    shen/210/\u7533, you/180/\u9149, xu/150/\u620c, hai/120/\u4ea5
+    zi/90/子, chou/60/丑, yin/30/寅, mao/0/卯,
+    chen/330/辰, si/300/巳, wu/270/午, wei/240/未,
+    shen/210/申, you/180/酉, xu/150/戌, hai/120/亥
   } {
     \fill[black] (\angle:3.8) circle (2pt);
     \node[font=\Large\bfseries] at (\angle:4.6) {\text};
   }
 
-  % \u4e09\u4f1a\u5c40\u6807\u7b7e\uff0c\u5206\u522b\u653e\u5728\u56db\u4e2a\u65b9\u5411\u533a\u57df
-  % \u5317\u65b9\u6c34\uff1a\u4e0a\u65b9
-  \node[font=\normalsize\bfseries, blue!60!black] at (90:2.5) {\u5317\u65b9\u6c34};
-  \node[font=\normalsize\bfseries, blue!60!black] at (90:1.8) {\u4ea5\u5b50\u4e11};
-  % \u4e1c\u65b9\u6728\uff1a\u53f3\u4fa7
-  \node[font=\normalsize\bfseries, green!60!black] at (0:2.5) {\u4e1c\u65b9\u6728};
-  \node[font=\normalsize\bfseries, green!60!black] at (0:1.8) {\u5bc5\u536f\u8fb0};
-  % \u5357\u65b9\u706b\uff1a\u4e0b\u65b9
-  \node[font=\normalsize\bfseries, red!60!black] at (270:2.5) {\u5357\u65b9\u706b};
-  \node[font=\normalsize\bfseries, red!60!black] at (270:1.8) {\u5df3\u5348\u672a};
-  % \u897f\u65b9\u91d1\uff1a\u5de6\u4fa7
-  \node[font=\normalsize\bfseries, orange!60!black] at (180:2.5) {\u897f\u65b9\u91d1};
-  \node[font=\normalsize\bfseries, orange!60!black] at (180:1.8) {\u7533\u9149\u620c};
+  % 三会局标签，分别放在四个方向区域
+  % 北方水：上方
+  \node[font=\normalsize\bfseries, blue!60!black] at (90:2.5) {北方水};
+  \node[font=\normalsize\bfseries, blue!60!black] at (90:1.8) {亥子丑};
+  % 东方木：右侧
+  \node[font=\normalsize\bfseries, green!60!black] at (0:2.5) {东方木};
+  \node[font=\normalsize\bfseries, green!60!black] at (0:1.8) {寅卯辰};
+  % 南方火：下方
+  \node[font=\normalsize\bfseries, red!60!black] at (270:2.5) {南方火};
+  \node[font=\normalsize\bfseries, red!60!black] at (270:1.8) {巳午未};
+  % 西方金：左侧
+  \node[font=\normalsize\bfseries, orange!60!black] at (180:2.5) {西方金};
+  \node[font=\normalsize\bfseries, orange!60!black] at (180:1.8) {申酉戌};
 
-  % \u56fe\u4f8b
-  \node[font=\small, anchor=west] at (-5.8,-5.2) {\u4e09\u4f1a\uff1a\u4e09\u4e2a\u8fde\u7eed\u5730\u652f\u8fde\u6210\u4e00\u65b9\u4e4b\u6c14};
+  % 图例
+  \node[font=\small, anchor=west] at (-5.8,-5.2) {三会：三个连续地支连成一方之气};
 
-  % \u767d\u8272\u80cc\u666f\uff0c\u9632\u6b62 GitHub dark mode \u4e0b\u900f\u660e SVG \u770b\u4e0d\u6e05
+  % 白色背景，防止 GitHub dark mode 下透明 SVG 看不清
   \begin{scope}[on background layer]
     \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
   \end{scope}

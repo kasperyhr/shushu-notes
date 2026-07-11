@@ -1,5 +1,5 @@
-% \u5730\u652f\u76f8\u5211\u56fe
-% \u7528\u9014\uff1a\u5c55\u793a\u5bc5\u5df3\u7533\u4e09\u5211\u3001\u4e11\u672a\u620c\u4e09\u5211\u3001\u5b50\u536f\u76f8\u5211\u3001\u8fb0\u5348\u9149\u4ea5\u81ea\u5211
+% 地支相刑图
+% 用途：展示寅巳申三刑、丑未戌三刑、子卯相刑、辰午酉亥自刑
 \documentclass[tikz,border=10pt]{standalone}
 \usepackage{ctex}
 \usepackage{xcolor}
@@ -24,39 +24,39 @@
   \draw[thick, gray!60] (0,0) circle (3.5);
 
   \foreach \name/\angle/\text in {
-    zi/90/\u5b50, chou/60/\u4e11, yin/30/\u5bc5, mao/0/\u536f,
-    chen/330/\u8fb0, si/300/\u5df3, wu/270/\u5348, wei/240/\u672a,
-    shen/210/\u7533, you/180/\u9149, xu/150/\u620c, hai/120/\u4ea5
+    zi/90/子, chou/60/丑, yin/30/寅, mao/0/卯,
+    chen/330/辰, si/300/巳, wu/270/午, wei/240/未,
+    shen/210/申, you/180/酉, xu/150/戌, hai/120/亥
   } {
     \fill[black] (\angle:3.5) circle (2pt);
     \node[font=\Large\bfseries] at (\angle:4.3) {\text};
   }
 
-  % \u5bc5\u5df3\u7533\u4e09\u5211\uff1a\u865a\u7ebf\u4e09\u89d2
+  % 寅巳申三刑：虚线三角
   \draw[brown!80!black, thick, dashed, {Stealth[length=3mm]}-{Stealth[length=3mm]}] (yin)  -- (si);
   \draw[brown!80!black, thick, dashed, {Stealth[length=3mm]}-{Stealth[length=3mm]}] (si)   -- (shen);
   \draw[brown!80!black, thick, dashed, {Stealth[length=3mm]}-{Stealth[length=3mm]}] (shen) -- (yin);
 
-  % \u4e11\u672a\u620c\u4e09\u5211\uff1a\u865a\u7ebf\u4e09\u89d2
+  % 丑未戌三刑：虚线三角
   \draw[brown!60!black, thick, dashed, {Stealth[length=3mm]}-{Stealth[length=3mm]}] (chou) -- (wei);
   \draw[brown!60!black, thick, dashed, {Stealth[length=3mm]}-{Stealth[length=3mm]}] (wei)  -- (xu);
   \draw[brown!60!black, thick, dashed, {Stealth[length=3mm]}-{Stealth[length=3mm]}] (xu)   -- (chou);
 
-  % \u5b50\u536f\u76f8\u5211\uff1a\u5355\u72ec\u8fde\u7ebf
+  % 子卯相刑：单独连线
   \draw[pink!70!black, very thick, decorate, decoration={snake, amplitude=0.6mm, segment length=4mm}, {Stealth[length=3mm]}-{Stealth[length=3mm]}] (zi) -- (mao);
 
-  % \u81ea\u5211\uff1a\u81ea\u73af\u6807\u8bb0 (\u8fb0=330\u00b0, \u5348=270\u00b0, \u9149=180\u00b0, \u4ea5=120\u00b0)
+  % 自刑：自环标记 (辰=330°, 午=270°, 酉=180°, 亥=120°)
   \foreach \angle in {330, 270, 180, 120} {
     \draw[pink!50!black, thick] (\angle:3.5) circle (10pt);
   }
 
-  % \u56fe\u4f8b
-  \node[font=\small, anchor=west] at (-5.5,-5.0) {\textbf{\u4e09\u5211}\uff08\u865a\u7ebf\u4e09\u89d2\uff09\uff1a\u5bc5\u5df3\u7533\uff08\u6df1\uff09+ \u4e11\u672a\u620c\uff08\u6d45\uff09};
-  \node[font=\small, anchor=west] at (-5.5,-5.5) {\textbf{\u76f8\u5211}\uff08\u6ce2\u6298\u7ebf\uff09\uff1a\u5b50\u536f\u76f8\u5211};
-  \node[font=\small, anchor=west] at (-5.5,-6.0) {\textbf{\u81ea\u5211}\uff08\u81ea\u73af\uff09\uff1a\u8fb0\u3001\u5348\u3001\u9149\u3001\u4ea5};
-  \node[font=\small, anchor=west] at (-5.5,-6.5) {\u5211 = \u62e7\u5df4\u3001\u5185\u8017\u3001\u7ed3\u6784\u6027\u6469\u64e6};
+  % 图例
+  \node[font=\small, anchor=west] at (-5.5,-5.0) {\textbf{三刑}（虚线三角）：寅巳申（深）+ 丑未戌（浅）};
+  \node[font=\small, anchor=west] at (-5.5,-5.5) {\textbf{相刑}（波折线）：子卯相刑};
+  \node[font=\small, anchor=west] at (-5.5,-6.0) {\textbf{自刑}（自环）：辰、午、酉、亥};
+  \node[font=\small, anchor=west] at (-5.5,-6.5) {刑 = 拧巴、内耗、结构性摩擦};
 
-  % \u767d\u8272\u80cc\u666f\uff0c\u9632\u6b62 GitHub dark mode \u4e0b\u900f\u660e SVG \u770b\u4e0d\u6e05
+  % 白色背景，防止 GitHub dark mode 下透明 SVG 看不清
   \begin{scope}[on background layer]
     \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
   \end{scope}

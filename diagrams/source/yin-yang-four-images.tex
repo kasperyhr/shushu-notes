@@ -1,5 +1,5 @@
-% \u9634\u9633\u56db\u8c61\u56fe
-% \u7528\u9014\uff1a\u5c55\u793a\u9634\u9633\u5230\u56db\u8c61\u7684\u6f14\u5316\uff1a\u9634\u723b\u3001\u9633\u723b \u2192 \u5c11\u9633\u3001\u8001\u9633\u3001\u5c11\u9634\u3001\u8001\u9634\uff0c\u642d\u914d\u4e00\u5929\u548c\u56db\u5b63
+% 阴阳四象图
+% 用途：展示阴阳到四象的演化：阴爻、阳爻 → 少阳、老阳、少阴、老阴，搭配一天和四季
 \documentclass[tikz,border=10pt]{standalone}
 \usepackage{ctex}
 \usepackage{xcolor}
@@ -9,64 +9,64 @@
 \begin{document}
 \begin{tikzpicture}[scale=1.05]
 
-  % ====== \u4e24\u4eea ======
-  \node[font=\LARGE\bfseries] at (0,7.0) {\u4e24\u4eea};
+  % ====== 两仪 ======
+  \node[font=\LARGE\bfseries] at (0,7.0) {两仪};
 
-  % \u9633\u723b
+  % 阳爻
   \draw[very thick] (-1.8,5.8) -- (1.8,5.8);
-  \node[font=\large\bfseries] at (0,5.3) {\u9633\u723b};
-  \node[font=\small] at (0,4.9) {\u663e\u73b0\u3001\u4e3b\u52a8\u3001\u660e\u4eae};
+  \node[font=\large\bfseries] at (0,5.3) {阳爻};
+  \node[font=\small] at (0,4.9) {显现、主动、明亮};
 
-  % \u9634\u723b
+  % 阴爻
   \draw[very thick] (-1.8,4.1) -- (-0.3,4.1);
   \draw[very thick] (0.3,4.1) -- (1.8,4.1);
-  \node[font=\large\bfseries] at (0,3.6) {\u9634\u723b};
-  \node[font=\small] at (0,3.2) {\u9690\u85cf\u3001\u5b89\u9759\u3001\u5e7d\u6697};
+  \node[font=\large\bfseries] at (0,3.6) {阴爻};
+  \node[font=\small] at (0,3.2) {隐藏、安静、幽暗};
 
-  % \u5206\u5272\u7ebf
+  % 分割线
   \draw[dashed, gray!50] (-2.8,2.7) -- (2.8,2.7);
 
-  % ====== \u56db\u8c61 ======
-  \node[font=\LARGE\bfseries] at (0,2.3) {\u56db\u8c61};
+  % ====== 四象 ======
+  \node[font=\LARGE\bfseries] at (0,2.3) {四象};
 
-  % \u5c11\u9633
-  \node[font=\large\bfseries, orange!70!black] at (-5.2,1.0) {\u5c11\u9633};
+  % 少阳
+  \node[font=\large\bfseries, orange!70!black] at (-5.2,1.0) {少阳};
   \draw[very thick] (-6.5,0.3) -- (-5.0,0.3);
   \draw[very thick] (-6.5,-0.2) -- (-5.5,-0.2);
   \draw[very thick] (-5.1,-0.2) -- (-5.0,-0.2);
-  \node[font=\small] at (-5.75,1.7) {\u9633\u521a\u5f00\u59cb\u751f};
-  \node[font=\small] at (-5.75,-0.7) {\u6e05\u6668 \u00b7 \u6625};
+  \node[font=\small] at (-5.75,1.7) {阳刚开始生};
+  \node[font=\small] at (-5.75,-0.7) {清晨 · 春};
 
-  % \u8001\u9633
-  \node[font=\large\bfseries, red!70!black] at (-1.7,1.0) {\u8001\u9633};
+  % 老阳
+  \node[font=\large\bfseries, red!70!black] at (-1.7,1.0) {老阳};
   \draw[very thick] (-3.0,0.3) -- (-1.6,0.3);
   \draw[very thick] (-3.0,-0.2) -- (-1.6,-0.2);
-  \node[font=\small] at (-2.3,1.7) {\u9633\u8fbe\u5230\u6781\u76db};
-  \node[font=\small] at (-2.3,-0.7) {\u6b63\u5348 \u00b7 \u590f};
+  \node[font=\small] at (-2.3,1.7) {阳达到极盛};
+  \node[font=\small] at (-2.3,-0.7) {正午 · 夏};
 
-  % \u5c11\u9634
-  \node[font=\large\bfseries, blue!60!black] at (1.7,1.0) {\u5c11\u9634};
+  % 少阴
+  \node[font=\large\bfseries, blue!60!black] at (1.7,1.0) {少阴};
   \draw[very thick] (0.4,0.3) -- (1.8,0.3);
   \draw[very thick] (1.1,0.3) -- (1.1,-0.2);
   \draw[very thick] (0.4,-0.2) -- (0.8,-0.2);
   \draw[very thick] (1.4,-0.2) -- (1.8,-0.2);
-  \node[font=\small] at (1.1,1.7) {\u9634\u521a\u5f00\u59cb\u751f};
-  \node[font=\small] at (1.1,-0.7) {\u508d\u665a \u00b7 \u79cb};
+  \node[font=\small] at (1.1,1.7) {阴刚开始生};
+  \node[font=\small] at (1.1,-0.7) {傍晚 · 秋};
 
-  % \u8001\u9634
-  \node[font=\large\bfseries, purple!70!black] at (5.2,1.0) {\u8001\u9634};
+  % 老阴
+  \node[font=\large\bfseries, purple!70!black] at (5.2,1.0) {老阴};
   \draw[very thick] (4.0,-0.2) -- (4.8,-0.2);
   \draw[very thick] (5.2,-0.2) -- (6.0,-0.2);
   \draw[very thick] (4.0,0.3) -- (4.8,0.3);
   \draw[very thick] (5.2,0.3) -- (6.0,0.3);
-  \node[font=\small] at (5.0,1.7) {\u9634\u8fbe\u5230\u6781\u76db};
-  \node[font=\small] at (5.0,-0.7) {\u5348\u591c \u00b7 \u51ac};
+  \node[font=\small] at (5.0,1.7) {阴达到极盛};
+  \node[font=\small] at (5.0,-0.7) {午夜 · 冬};
 
-  % \u5e95\u90e8\u5faa\u73af
-  \node[font=\normalsize, gray!70!black] at (0,-1.5) {\u5c11\u9633 \u2192 \u8001\u9633 \u2192 \u5c11\u9634 \u2192 \u8001\u9634 \u2192 \u5c11\u9633 \u2026};
-  \node[font=\small, gray] at (0,-2.0) {\u9634\u9633\u6d88\u957f\uff0c\u5faa\u73af\u4e0d\u606f};
+  % 底部循环
+  \node[font=\normalsize, gray!70!black] at (0,-1.5) {少阳 → 老阳 → 少阴 → 老阴 → 少阳 …};
+  \node[font=\small, gray] at (0,-2.0) {阴阳消长，循环不息};
 
-  % \u767d\u8272\u80cc\u666f\uff0c\u9632\u6b62 GitHub dark mode \u4e0b\u900f\u660e SVG \u770b\u4e0d\u6e05
+  % 白色背景，防止 GitHub dark mode 下透明 SVG 看不清
   \begin{scope}[on background layer]
     \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
   \end{scope}

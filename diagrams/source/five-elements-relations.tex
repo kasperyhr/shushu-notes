@@ -1,5 +1,5 @@
-% \u4e94\u884c\u751f\u514b\u5173\u7cfb\u56fe
-% \u7528\u9014\uff1a\u5c55\u793a\u4e94\u884c\uff08\u6728\u706b\u571f\u91d1\u6c34\uff09\u7684\u76f8\u751f\u548c\u76f8\u514b\u5173\u7cfb
+% 五行生克关系图
+% 用途：展示五行（木火土金水）的相生和相克关系
 \documentclass[tikz,border=10pt]{standalone}
 \usepackage{ctex}
 \usepackage{xcolor}
@@ -8,48 +8,48 @@
 
 \begin{document}
 \begin{tikzpicture}[scale=1.4]
-  % \u4e94\u884c\u8282\u70b9\u5750\u6807\uff08\u4e94\u8fb9\u5f62\u6392\u5217\uff09
+  % 五行节点坐标（五边形排列）
   \coordinate (mu)   at ( 90:3.2);
   \coordinate (huo)  at ( 18:3.2);
   \coordinate (tu)   at (306:3.2);
   \coordinate (jin)  at (234:3.2);
   \coordinate (shui) at (162:3.2);
 
-  % \u76f8\u751f\uff1a\u5916\u5708\u7eff\u8272\u5f27\u5f62\u7bad\u5934\uff08\u52a0\u7c97\uff09
-  \draw[green!50!black, ultra thick, ->, >=Stealth] (mu)   to[bend left=50] node[font=\normalsize\bfseries, midway, above right, fill=white, inner sep=2pt] {\u751f} (huo);
-  \draw[green!50!black, ultra thick, ->, >=Stealth] (huo)  to[bend left=30] node[font=\normalsize\bfseries, midway, right, fill=white, inner sep=2pt] {\u751f} (tu);
-  \draw[green!50!black, ultra thick, ->, >=Stealth] (tu)   to[bend left=30] node[font=\normalsize\bfseries, midway, below left, fill=white, inner sep=2pt] {\u751f} (jin);
-  \draw[green!50!black, ultra thick, ->, >=Stealth] (jin)  to[bend left=30] node[font=\normalsize\bfseries, midway, left, fill=white, inner sep=2pt] {\u751f} (shui);
-  \draw[green!50!black, ultra thick, ->, >=Stealth] (shui) to[bend left=30] node[font=\normalsize\bfseries, midway, above left, fill=white, inner sep=2pt] {\u751f} (mu);
+  % 相生：外圈绿色弧形箭头（加粗）
+  \draw[green!50!black, ultra thick, ->, >=Stealth] (mu)   to[bend left=50] node[font=\normalsize\bfseries, midway, above right, fill=white, inner sep=2pt] {生} (huo);
+  \draw[green!50!black, ultra thick, ->, >=Stealth] (huo)  to[bend left=30] node[font=\normalsize\bfseries, midway, right, fill=white, inner sep=2pt] {生} (tu);
+  \draw[green!50!black, ultra thick, ->, >=Stealth] (tu)   to[bend left=30] node[font=\normalsize\bfseries, midway, below left, fill=white, inner sep=2pt] {生} (jin);
+  \draw[green!50!black, ultra thick, ->, >=Stealth] (jin)  to[bend left=30] node[font=\normalsize\bfseries, midway, left, fill=white, inner sep=2pt] {生} (shui);
+  \draw[green!50!black, ultra thick, ->, >=Stealth] (shui) to[bend left=30] node[font=\normalsize\bfseries, midway, above left, fill=white, inner sep=2pt] {生} (mu);
 
-  % \u76f8\u514b\uff1a\u5185\u90e8\u661f\u5f62\u7ea2\u8272\u7bad\u5934\uff08\u52a0\u7c97\uff09
-  \draw[red!70!black, ultra thick, ->, >=Stealth] (mu)   -- node[font=\normalsize\bfseries, midway, above right, fill=white, inner sep=2pt] {\u514b} (tu);
-  \draw[red!70!black, ultra thick, ->, >=Stealth] (tu)   -- node[font=\normalsize\bfseries, midway, below, fill=white, inner sep=2pt] {\u514b} (shui);
-  \draw[red!70!black, ultra thick, ->, >=Stealth] (shui) -- node[font=\normalsize\bfseries, midway, left, fill=white, inner sep=2pt] {\u514b} (huo);
-  \draw[red!70!black, ultra thick, ->, >=Stealth] (huo)  -- node[font=\normalsize\bfseries, midway, right, fill=white, inner sep=2pt] {\u514b} (jin);
-  \draw[red!70!black, ultra thick, ->, >=Stealth] (jin)  -- node[font=\normalsize\bfseries, midway, above left, fill=white, inner sep=2pt] {\u514b} (mu);
+  % 相克：内部星形红色箭头（加粗）
+  \draw[red!70!black, ultra thick, ->, >=Stealth] (mu)   -- node[font=\normalsize\bfseries, midway, above right, fill=white, inner sep=2pt] {克} (tu);
+  \draw[red!70!black, ultra thick, ->, >=Stealth] (tu)   -- node[font=\normalsize\bfseries, midway, below, fill=white, inner sep=2pt] {克} (shui);
+  \draw[red!70!black, ultra thick, ->, >=Stealth] (shui) -- node[font=\normalsize\bfseries, midway, left, fill=white, inner sep=2pt] {克} (huo);
+  \draw[red!70!black, ultra thick, ->, >=Stealth] (huo)  -- node[font=\normalsize\bfseries, midway, right, fill=white, inner sep=2pt] {克} (jin);
+  \draw[red!70!black, ultra thick, ->, >=Stealth] (jin)  -- node[font=\normalsize\bfseries, midway, above left, fill=white, inner sep=2pt] {克} (mu);
 
-  % \u4e94\u884c\u8282\u70b9\uff08\u52a0\u5927\uff09
+  % 五行节点（加大）
   \fill[green!60!black] (mu) circle (14pt);
-  \node[font=\Large\bfseries, white] at (mu) {\u6728};
+  \node[font=\Large\bfseries, white] at (mu) {木};
 
   \fill[red!60!black] (huo) circle (14pt);
-  \node[font=\Large\bfseries, white] at (huo) {\u706b};
+  \node[font=\Large\bfseries, white] at (huo) {火};
 
   \fill[yellow!60!black] (tu) circle (14pt);
-  \node[font=\Large\bfseries, black] at (tu) {\u571f};
+  \node[font=\Large\bfseries, black] at (tu) {土};
 
   \fill[gray!60!black] (jin) circle (14pt);
-  \node[font=\Large\bfseries, white] at (jin) {\u91d1};
+  \node[font=\Large\bfseries, white] at (jin) {金};
 
   \fill[blue!60!black] (shui) circle (14pt);
-  \node[font=\Large\bfseries, white] at (shui) {\u6c34};
+  \node[font=\Large\bfseries, white] at (shui) {水};
 
-  % \u56fe\u4f8b\uff08\u653e\u5927\uff09
-  \node[font=\normalsize, green!50!black, anchor=west] at (-4.8,-4.2) {\u5916\u5708 \textbf{\u76f8\u751f}\uff1a\u63d0\u4f9b\u6761\u4ef6\u3001\u6ecb\u517b\u3001\u589e\u5f3a};
-  \node[font=\normalsize, red!70!black, anchor=west]  at (-4.8,-4.8) {\u5185\u90e8 \textbf{\u76f8\u514b}\uff1a\u7ea6\u675f\u3001\u63a7\u5236\u3001\u5236\u8861};
+  % 图例（放大）
+  \node[font=\normalsize, green!50!black, anchor=west] at (-4.8,-4.2) {外圈 \textbf{相生}：提供条件、滋养、增强};
+  \node[font=\normalsize, red!70!black, anchor=west]  at (-4.8,-4.8) {内部 \textbf{相克}：约束、控制、制衡};
 
-  % \u767d\u8272\u80cc\u666f\uff0c\u9632\u6b62 GitHub dark mode \u4e0b\u900f\u660e SVG \u770b\u4e0d\u6e05
+  % 白色背景，防止 GitHub dark mode 下透明 SVG 看不清
   \begin{scope}[on background layer]
     \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
   \end{scope}

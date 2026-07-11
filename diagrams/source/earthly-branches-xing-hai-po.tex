@@ -1,5 +1,5 @@
-% \u5730\u652f\u5211\u5bb3\u7834\u5173\u7cfb\u603b\u89c8\u56fe
-% \u7528\u9014\uff1a\u5c06\u5211\u3001\u5bb3\u3001\u7834\u4e09\u79cd\u7ec6\u5173\u7cfb\u653e\u5728\u4e00\u5f20\u56fe\u4e2d\uff0c\u4fbf\u4e8e\u590d\u4e60\u5bf9\u6bd4
+% 地支刑害破关系总览图
+% 用途：将刑、害、破三种细关系放在一张图中，便于复习对比
 \documentclass[tikz,border=10pt]{standalone}
 \usepackage{ctex}
 \usepackage{xcolor}
@@ -24,27 +24,27 @@
   \draw[thick, gray!60] (0,0) circle (3.5);
 
   \foreach \name/\angle/\text in {
-    zi/90/\u5b50, chou/60/\u4e11, yin/30/\u5bc5, mao/0/\u536f,
-    chen/330/\u8fb0, si/300/\u5df3, wu/270/\u5348, wei/240/\u672a,
-    shen/210/\u7533, you/180/\u9149, xu/150/\u620c, hai/120/\u4ea5
+    zi/90/子, chou/60/丑, yin/30/寅, mao/0/卯,
+    chen/330/辰, si/300/巳, wu/270/午, wei/240/未,
+    shen/210/申, you/180/酉, xu/150/戌, hai/120/亥
   } {
     \fill[black] (\angle:3.5) circle (2pt);
     \node[font=\Large\bfseries] at (\angle:4.3) {\text};
   }
 
-  % === \u5211\uff1a\u865a\u7ebf/\u6ce2\u6d6a\u7ebf/\u81ea\u73af ===
-  % \u5bc5\u5df3\u7533\u4e09\u5211
+  % === 刑：虚线/波浪线/自环 ===
+  % 寅巳申三刑
   \draw[brown!80!black, thin, dashed] (yin) -- (si) -- (shen) -- cycle;
-  % \u4e11\u672a\u620c\u4e09\u5211
+  % 丑未戌三刑
   \draw[brown!60!black, thin, dashed] (chou) -- (wei) -- (xu) -- cycle;
-  % \u5b50\u536f\u76f8\u5211
+  % 子卯相刑
   \draw[pink!70!black, thin, decorate, decoration={snake, amplitude=0.4mm, segment length=3mm}] (zi) -- (mao);
-  % \u81ea\u5211
+  % 自刑
   \foreach \angle in {330, 270, 180, 120} {
     \draw[pink!50!black, thin] (\angle:3.5) circle (8pt);
   }
 
-  % === \u5bb3\uff1a\u70b9\u5212\u7ebf ===
+  % === 害：点划线 ===
   \draw[purple!70!black, thin, dash pattern=on 4pt off 2pt on 1pt off 2pt] (zi)   -- (wei);
   \draw[purple!70!black, thin, dash pattern=on 4pt off 2pt on 1pt off 2pt] (chou) -- (wu);
   \draw[purple!70!black, thin, dash pattern=on 4pt off 2pt on 1pt off 2pt] (yin)  -- (si);
@@ -52,7 +52,7 @@
   \draw[purple!70!black, thin, dash pattern=on 4pt off 2pt on 1pt off 2pt] (shen) -- (hai);
   \draw[purple!70!black, thin, dash pattern=on 4pt off 2pt on 1pt off 2pt] (you)  -- (xu);
 
-  % === \u7834\uff1a\u77ed\u865a\u7ebf ===
+  % === 破：短虚线 ===
   \draw[olive!70!black, thin, densely dotted] (zi)   -- (you);
   \draw[olive!70!black, thin, densely dotted] (chou) -- (chen);
   \draw[olive!70!black, thin, densely dotted] (yin)  -- (hai);
@@ -60,15 +60,15 @@
   \draw[olive!70!black, thin, densely dotted] (shen) -- (si);
   \draw[olive!70!black, thin, densely dotted] (xu)   -- (wei);
 
-  % \u56fe\u4f8b
+  % 图例
   \draw[brown!80!black, thin, dashed] (-5.5,-4.8) -- (-4.8,-4.8);
-  \node[font=\small, anchor=west] at (-4.7,-4.8) {\textbf{\u5211}\uff1a\u62e7\u5df4\u3001\u5185\u8017\u3001\u7ed3\u6784\u6027\u6469\u64e6};
+  \node[font=\small, anchor=west] at (-4.7,-4.8) {\textbf{刑}：拧巴、内耗、结构性摩擦};
   \draw[purple!70!black, thin, dash pattern=on 4pt off 2pt on 1pt off 2pt] (-5.5,-5.2) -- (-4.8,-5.2);
-  \node[font=\small, anchor=west] at (-4.7,-5.2) {\textbf{\u5bb3}\uff1a\u6697\u4f24\u3001\u9694\u9602\u3001\u9690\u6027\u635f\u8017};
+  \node[font=\small, anchor=west] at (-4.7,-5.2) {\textbf{害}：暗伤、隔阂、隐性损耗};
   \draw[olive!70!black, thin, densely dotted] (-5.5,-5.6) -- (-4.8,-5.6);
-  \node[font=\small, anchor=west] at (-4.7,-5.6) {\textbf{\u7834}\uff1a\u7834\u635f\u3001\u7834\u88c2\u3001\u5b8c\u6574\u6027\u53d7\u635f};
+  \node[font=\small, anchor=west] at (-4.7,-5.6) {\textbf{破}：破损、破裂、完整性受损};
 
-  % \u767d\u8272\u80cc\u666f\uff0c\u9632\u6b62 GitHub dark mode \u4e0b\u900f\u660e SVG \u770b\u4e0d\u6e05
+  % 白色背景，防止 GitHub dark mode 下透明 SVG 看不清
   \begin{scope}[on background layer]
     \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
   \end{scope}

@@ -1,5 +1,5 @@
-% \u5730\u652f\u4e09\u5408\u534a\u5408\u56fe
-% \u7528\u9014\uff1a\u5c55\u793a\u56db\u4e2a\u4e09\u5408\u5c40\u548c\u5bf9\u5e94\u7684\u534a\u5408\u5173\u7cfb
+% 地支三合半合图
+% 用途：展示四个三合局和对应的半合关系
 \documentclass[tikz,border=10pt]{standalone}
 \usepackage{ctex}
 \usepackage{xcolor}
@@ -24,35 +24,35 @@
   \draw[thick, gray!60] (0,0) circle (4.0);
 
   \foreach \name/\angle/\text in {
-    zi/90/\u5b50, chou/60/\u4e11, yin/30/\u5bc5, mao/0/\u536f,
-    chen/330/\u8fb0, si/300/\u5df3, wu/270/\u5348, wei/240/\u672a,
-    shen/210/\u7533, you/180/\u9149, xu/150/\u620c, hai/120/\u4ea5
+    zi/90/子, chou/60/丑, yin/30/寅, mao/0/卯,
+    chen/330/辰, si/300/巳, wu/270/午, wei/240/未,
+    shen/210/申, you/180/酉, xu/150/戌, hai/120/亥
   } {
     \fill[black] (\angle:4.0) circle (2pt);
     \node[font=\Large\bfseries] at (\angle:4.8) {\text};
   }
 
-  % \u6838\u5fc3\u5730\u652f\uff08\u5b50\u536f\u5348\u9149\uff09\u9ad8\u4eae
+  % 核心地支（子卯午酉）高亮
   \draw[orange!80!black, ultra thick] (90:4.0)  circle (12pt);
   \draw[teal!80!black,  ultra thick] (0:4.0)   circle (12pt);
   \draw[red!80!black,   ultra thick] (270:4.0) circle (12pt);
   \draw[gray!80!black,  ultra thick] (180:4.0) circle (12pt);
-  \node[font=\Large\bfseries, orange!80!black] at (90:4.0)  {\u5b50};
-  \node[font=\Large\bfseries, teal!80!black]  at (0:4.0)   {\u536f};
-  \node[font=\Large\bfseries, red!80!black]   at (270:4.0) {\u5348};
-  \node[font=\Large\bfseries, gray!80!black]  at (180:4.0) {\u9149};
+  \node[font=\Large\bfseries, orange!80!black] at (90:4.0)  {子};
+  \node[font=\Large\bfseries, teal!80!black]  at (0:4.0)   {卯};
+  \node[font=\Large\bfseries, red!80!black]   at (270:4.0) {午};
+  \node[font=\Large\bfseries, gray!80!black]  at (180:4.0) {酉};
 
-  % \u4e09\u5408\u5c40\uff1a\u5b9e\u7ebf\u4e09\u89d2 + \u6807\u7b7e
+  % 三合局：实线三角 + 标签
   \draw[orange!70!black, very thick] (shen) -- (zi) -- (chen) -- cycle;
-  \node[font=\normalsize\bfseries, orange!70!black, fill=white, inner sep=2pt] at (120:1.8) {\u6c34\u5c40};
+  \node[font=\normalsize\bfseries, orange!70!black, fill=white, inner sep=2pt] at (120:1.8) {水局};
   \draw[teal!70!black, very thick] (hai) -- (mao) -- (wei) -- cycle;
-  \node[font=\normalsize\bfseries, teal!70!black, fill=white, inner sep=2pt] at (60:2.0) {\u6728\u5c40};
+  \node[font=\normalsize\bfseries, teal!70!black, fill=white, inner sep=2pt] at (60:2.0) {木局};
   \draw[red!70!black, very thick] (yin) -- (wu) -- (xu) -- cycle;
-  \node[font=\normalsize\bfseries, red!70!black, fill=white, inner sep=2pt] at (300:2.0) {\u706b\u5c40};
+  \node[font=\normalsize\bfseries, red!70!black, fill=white, inner sep=2pt] at (300:2.0) {火局};
   \draw[gray!60!black, very thick] (si) -- (you) -- (chou) -- cycle;
-  \node[font=\normalsize\bfseries, gray!60!black, fill=white, inner sep=2pt] at (240:1.8) {\u91d1\u5c40};
+  \node[font=\normalsize\bfseries, gray!60!black, fill=white, inner sep=2pt] at (240:1.8) {金局};
 
-  % \u534a\u5408\uff1a\u865a\u7ebf\u8fde\u63a5\u6838\u5fc3\u5730\u652f\u4e0e\u4e24\u8fb9
+  % 半合：虚线连接核心地支与两边
   \draw[orange!70!black, dashed, thin] (zi) -- (shen);
   \draw[orange!70!black, dashed, thin] (zi) -- (chen);
   \draw[teal!70!black, dashed, thin] (mao) -- (hai);
@@ -62,12 +62,12 @@
   \draw[gray!60!black, dashed, thin] (you) -- (si);
   \draw[gray!60!black, dashed, thin] (you) -- (chou);
 
-  % \u56fe\u4f8b
-  \node[font=\small\bfseries, anchor=west] at (-6.0,-5.5) {\textbf{\u4e09\u5408\u5c40}\uff08\u5b9e\u7ebf\u4e09\u89d2\uff09};
-  \node[font=\small, anchor=west] at (-6.0,-6.0) {\u6a59:\u6c34 \u00a0 \u9752:\u6728 \u00a0 \u7ea2:\u706b \u00a0 \u7070:\u91d1};
-  \node[font=\small\bfseries, anchor=west] at (-6.0,-6.5) {\textbf{\u534a\u5408}\uff08\u865a\u7ebf\uff09\uff1a\u805a\u5408\u503e\u5411\uff0c\u4e0d\u7b49\u4e8e\u5b8c\u6574\u6210\u5c40};
+  % 图例
+  \node[font=\small\bfseries, anchor=west] at (-6.0,-5.5) {\textbf{三合局}（实线三角）};
+  \node[font=\small, anchor=west] at (-6.0,-6.0) {橙:水   青:木   红:火   灰:金};
+  \node[font=\small\bfseries, anchor=west] at (-6.0,-6.5) {\textbf{半合}（虚线）：聚合倾向，不等于完整成局};
 
-  % \u767d\u8272\u80cc\u666f\uff0c\u9632\u6b62 GitHub dark mode \u4e0b\u900f\u660e SVG \u770b\u4e0d\u6e05
+  % 白色背景，防止 GitHub dark mode 下透明 SVG 看不清
   \begin{scope}[on background layer]
     \fill[white] (current bounding box.south west) rectangle (current bounding box.north east);
   \end{scope}
