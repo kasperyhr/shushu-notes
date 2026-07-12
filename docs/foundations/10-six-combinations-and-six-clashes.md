@@ -32,10 +32,6 @@
 
 冲 = 冲击、变动、分离、打开、破局。两个地支在地理方位上正好相对。
 
-![地支六合图](../../diagrams/generated/earthly-branches-liuhe)
-
-> 上图展示六对地支两两相合的关系，红色弧线连接。
-
 ![地支六合图](../../diagrams/generated/earthly-branches-liuhe.svg)
 
 > 上图展示六对地支两两相合的关系，红色弧线连接。
@@ -52,10 +48,6 @@
 - 作用到谁：是好的因素被合被冲，还是坏的因素被合被冲？
 - 旺衰：力量对比如何？强者冲弱者一冲就散，弱者冲强者如螳臂当车。
 - 问题背景：问事业时冲可能是变动，问感情时冲可能是分离。
-
-![地支六冲图](../../diagrams/generated/earthly-branches-liuchong)
-
-> 上图展示六对地支对冲冲克的关系，蓝色箭头直穿圆心。
 
 ![地支六冲图](../../diagrams/generated/earthly-branches-liuchong.svg)
 

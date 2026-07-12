@@ -22,10 +22,6 @@
 | 火克金 | 热烈冲击规则。火能熔化金属，激情和爆发可以打破僵硬的规则。 |
 | 金克木 | 规则裁剪生长。斧头砍树，规则和规范可以约束无序的生长。 |
 
-![五行生克关系图](../../diagrams/generated/five-elements-relations)
-
-> 上图展示五行生克全貌，综合参考。
-
 ![五行生克关系图](../../diagrams/generated/five-elements-relations.svg)
 
 > 上图展示五行生克全貌，综合参考。

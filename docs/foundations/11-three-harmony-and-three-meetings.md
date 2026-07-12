@@ -48,13 +48,6 @@
 
 三会局是连续三个地支连成一方之气，正好对应四个季节。不需要中间有什么特殊点位，连续三个就成势。
 
-![地支三会图](../../diagrams/generated/earthly-branches-sanhui)
-
-> 上图展示四个三会局（扇形区域），连续三个地支成一方之气。
-
-![地支三合半合图](../../diagrams/generated/earthly-branches-sanhe-banhe)
-
-> 上图展示四个三合局（实线三角）与半合关系（虚线），核心地支为子卯午酉。
 
 ![地支三合半合图](../../diagrams/generated/earthly-branches-sanhe-banhe.svg)
 
@@ -62,7 +55,7 @@
 
 ![地支三会图](../../diagrams/generated/earthly-branches-sanhui.svg)
 
-> 上图展示四个三会局（扇形区域），连续三个地支成一方之气。
+> 上图展示四个三会局，连续三个地支成一方之气。
 
 ## 对应关系
 

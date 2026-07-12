@@ -64,10 +64,6 @@
 
 术数中的月建主要按节气划分，上表中的"正月、二月"等是传统习惯称呼，不要误以为月建完全按农历初一切换。
 
-![十二地支圆环图](../../diagrams/generated/earthly-branches-base-circle)
-
-> 上图展示十二地支顺时针圆环排列，子北午南卯东酉西，内圈标注四季区域。
-
 ![十二地支圆环图](../../diagrams/generated/earthly-branches-base-circle.svg)
 
 > 上图展示十二地支顺时针圆环排列，子北午南卯东酉西，内圈标注四季区域。
